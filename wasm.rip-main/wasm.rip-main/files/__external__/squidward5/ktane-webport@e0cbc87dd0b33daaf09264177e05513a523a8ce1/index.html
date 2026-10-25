@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <base href="./">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Keep Talking and Nobody Explodes</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        border: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #231f20;
+      }
+
+      #unityContainer {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        border: 0;
+        padding: 0;
+      }
+
+      #unityContainer canvas {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <!-- Hosted alongside Build/ and data/, so every asset is resolved relative to this page.
+         Works at a domain root or under a GitHub Pages project path such as /ktane-webport/. -->
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      const BUILD_BASE = new URL("Build/", document.baseURI).href;
+      const DATA_BASE = new URL("data/", document.baseURI).href;
+      const DATA_CHUNK_COUNT = 16;
+      const DATA_CHUNK_SIZE = 16 * 1024 * 1024;
+
+      async function fetchDataChunk(index) {
+        const name = "data-" + String(index).padStart(3, "0") + ".bin";
+        const response = await fetch(DATA_BASE + name);
+        if (!response.ok) {
+          throw new Error("Unity data chunk request failed with HTTP " + response.status + ": " + name);
+        }
+
+        const chunk = await response.arrayBuffer();
+        const isLastChunk = index === DATA_CHUNK_COUNT - 1;
+        const sizeValid = isLastChunk
+          ? chunk.byteLength > 0 && chunk.byteLength <= DATA_CHUNK_SIZE
+          : chunk.byteLength === DATA_CHUNK_SIZE;
+        if (!sizeValid) {
+          throw new Error("Unity data chunk has an unexpected size: " + name + " (" + chunk.byteLength + " bytes)");
+        }
+        return chunk;
+      }
+
+      async function assembleUnityData() {
+        const chunks = await Promise.all(
+          Array.from({ length: DATA_CHUNK_COUNT }, function (_, index) {
+            return fetchDataChunk(index);
+          })
+        );
+
+        const signature = new TextDecoder().decode(new Uint8Array(chunks[0], 0, 15));
+        if (signature !== "UnityWebData1.0") {
+          throw new Error("Unity data chunks have an invalid archive header.");
+        }
+
+        return URL.createObjectURL(new Blob(chunks, { type: "application/octet-stream" }));
+      }
+
+      async function startUnity() {
+        try {
+          const response = await fetch(BUILD_BASE + "fixed%20build.json");
+          if (!response.ok) {
+            throw new Error("Game config request failed with HTTP " + response.status);
+          }
+
+          const config = await response.json();
+          config.dataUrl = await assembleUnityData();
+          config.wasmCodeUrl = BUILD_BASE + "fixed%20build.wasm";
+          config.wasmFrameworkUrl = BUILD_BASE + "fixed%20build.wasm.framework.unityweb";
+
+          const configUrl = URL.createObjectURL(
+            new Blob([JSON.stringify(config)], { type: "application/json" })
+          );
+          UnityLoader.instantiate("unityContainer", configUrl, {
+            Module: {
+              resolveBuildUrl: function (assetUrl) {
+                if (/^(https?|blob):/i.test(assetUrl)) {
+                  return assetUrl;
+                }
+                if (/\.wasm(?:$|\?)/i.test(assetUrl)) {
+                  return config.wasmCodeUrl;
+                }
+                return BUILD_BASE + assetUrl;
+              },
+              locateFile: function (fileName) {
+                if (/\.wasm(?:$|\?)/i.test(fileName)) {
+                  return config.wasmCodeUrl;
+                }
+                return BUILD_BASE + fileName;
+              }
+            },
+            onerror: function (error) {
+              console.error("Unity failed to start:", error);
+            }
+          });
+        } catch (error) {
+          console.error("Unable to load the game:", error);
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", startUnity);
+    </script>
+  </head>
+  <body>
+    <div id="unityContainer"></div>
+  </body>
+</html>
