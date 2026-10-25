@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		const PREFIX = "Balatro_Balatro_";
+				const GAME_CACHE_KEY = "game.love.overlay-v7";
+		const originalOpen = indexedDB.open;
+		const originalDeleteDatabase = indexedDB.deleteDatabase;
+		indexedDB.open = function(name, version) {
+			const prefixedName = PREFIX + name;
+			return version !== undefined
+				? originalOpen.call(this, prefixedName, version)
+				: originalOpen.call(this, prefixedName);
+		};
+		indexedDB.deleteDatabase = function(name) {
+			return originalDeleteDatabase.call(this, PREFIX + name);
+		};
+		["keydown", "keypress", "keyup"].forEach(type => {
+			window.addEventListener(type, event => {
+				const adminOverlay = document.getElementById("adminOverlay");
+				if (!adminOverlay || adminOverlay.hidden || !adminOverlay.contains(event.target)) return;
+				if (type === "keydown" && event.key === "F2") {
+					event.preventDefault();
+					document.getElementById("adminToggle").click();
+				} else if (type === "keydown" && event.key === "Escape") {
+					const list = document.getElementById("adminJokerSuggestions");
+					if (!list || list.hidden) {
+						event.preventDefault();
+						document.getElementById("adminClose").click();
+					}
+				}
+				if (type === "keydown" && event.target.id === "adminJokerSearch") {
+					const list = document.getElementById("adminJokerSuggestions");
+					const options = list ? [...list.querySelectorAll("[role=option]")] : [];
+					const selectedIndex = options.findIndex(option => option.getAttribute("aria-selected") === "true");
+					if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+						if (!list.hidden && options.length) {
+							event.preventDefault();
+							const direction = event.key === "ArrowDown" ? 1 : -1;
+							const nextIndex = selectedIndex < 0
+								? (direction > 0 ? 0 : options.length - 1)
+								: (selectedIndex + direction + options.length) % options.length;
+							options.forEach((option, index) => option.setAttribute("aria-selected", String(index === nextIndex)));
+							options[nextIndex].scrollIntoView({ block: "nearest" });
+						}
+					} else if (event.key === "Enter" && !list.hidden && options.length) {
+						event.preventDefault();
+						const option = options[selectedIndex < 0 ? 0 : selectedIndex];
+						event.target.value = option.dataset.value;
+						list.hidden = true;
+						event.target.setAttribute("aria-expanded", "false");
+						document.getElementById("adminStatus").textContent = `Selected ${option.textContent}`;
+					} else if (event.key === "Escape" && !list.hidden) {
+						event.preventDefault();
+						list.hidden = true;
+						event.target.setAttribute("aria-expanded", "false");
+					}
+				}
+				event.stopImmediatePropagation();
+			}, true);
+		});
+		["pointerdown", "mousedown"].forEach(type => {
+			window.addEventListener(type, event => {
+				const adminOverlay = document.getElementById("adminOverlay");
+				if (!adminOverlay || adminOverlay.hidden || !(event.target instanceof HTMLElement) ||
+					!adminOverlay.contains(event.target)) return;
+				if ((type === "pointerdown" || type === "mousedown") &&
+					event.target.closest("#adminJokerSuggestions [role=option]")) {
+					event.preventDefault();
+				}
+				event.stopImmediatePropagation();
+				if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
+					setTimeout(() => event.target.focus({ preventScroll: true }), 0);
+				}
+			}, true);
+		});
+	</script>
+	<script src="love.min.js"></script>
+	<title>Love.js</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<style>
+		* { box-sizing: border-box; }
+		html, body { width: 100%; height: 100%; margin: 0; }
+		body { overflow: hidden; background: #10191d; }
+		#canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+		.loader-screen {
+			position: fixed;
+			inset: 0;
+			z-index: 2;
+			display: grid;
+			place-items: center;
+			overflow: hidden;
+			background: repeating-conic-gradient(from 218deg at 50% 44%, #8b242a 0deg 12deg, #c13b36 12deg 22deg, #302329 22deg 29deg, #075985 29deg 40deg, #087eae 40deg 50deg, #17262d 50deg 58deg);
+			opacity: 1;
+			transition: opacity 300ms ease;
+		}
+		.loader-screen::before {
+			position: absolute;
+			inset: 0;
+			z-index: 2;
+			background: repeating-linear-gradient(to bottom, transparent 0 3px, rgba(0, 0, 0, .25) 4px);
+			content: "";
+			pointer-events: none;
+		}
+		.loader-screen::after {
+			position: absolute;
+			inset: 0;
+			z-index: 2;
+			background: radial-gradient(ellipse at center, transparent 34%, rgba(0, 0, 0, .62) 100%);
+			box-shadow: inset 0 0 90px rgba(0, 0, 0, .64);
+			content: "";
+			pointer-events: none;
+		}
+		.loader-screen[hidden] { display: none; }
+		.loader-screen.is-ready { opacity: 0; pointer-events: none; }
+		.loader-layout {
+			position: relative;
+			z-index: 1;
+			display: flex;
+			width: min(1100px, calc(100vw - 32px));
+			height: min(78vh, 700px);
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+			padding: 7vh 0 2vh;
+		}
+		.loader-logo {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: .08em;
+			color: #f6f0e8;
+			font-family: "Press Start 2P", "Courier New", monospace;
+			font-size: 100px;
+			line-height: 1;
+			text-shadow: 3px 0 rgba(255, 55, 67, .7), -3px 0 rgba(40, 204, 255, .7), 0 5px 0 #26353a, 0 10px 0 #10191d;
+			animation: logo-hover 4.2s ease-in-out infinite;
+		}
+		.logo-card {
+			position: relative;
+			display: grid;
+			width: .82em;
+			height: 1.16em;
+			place-items: center;
+			border: 3px solid #1b2428;
+			border-radius: 3px;
+			background: linear-gradient(110deg, #e7e5d8, #fff 45%, #d7dedb);
+			box-shadow: 4px 4px 0 #11252d, -2px 0 rgba(25, 178, 255, .8), 2px 0 rgba(255, 56, 63, .8);
+			color: #17212a;
+			font-family: "Press Start 2P", monospace;
+			font-size: .7em;
+			text-shadow: none;
+			transform: translateY(.12em) rotate(2deg);
+		}
+		.logo-card::before, .logo-card::after { position: absolute; left: 4px; font-size: .28em; }
+		.logo-card::before { top: 5px; content: "A"; }
+		.logo-card::after { bottom: 5px; content: "A"; transform: rotate(180deg); }
+		.loader-version {
+			position: absolute;
+			top: 5vh;
+			right: 6vw;
+			z-index: 1;
+			color: #f2e9de;
+			font: 8px "Press Start 2P", "Courier New", monospace;
+			text-shadow: 2px 0 rgba(255, 50, 58, .7), -2px 0 rgba(26, 197, 255, .7), 1px 2px #172126;
+		}
+		.loader-panel {
+			position: relative;
+			width: min(620px, 100%);
+			padding: 21px 24px 18px;
+			border: 4px solid #102b31;
+			border-radius: 5px;
+			background: linear-gradient(180deg, #3b655d 0%, #294b48 18%, #263b3d 100%);
+			box-shadow: 0 8px 0 #071317, inset 0 3px 0 rgba(206, 245, 220, .34), inset 0 -4px 0 rgba(4, 17, 21, .52), -3px 0 rgba(18, 178, 255, .42), 3px 0 rgba(255, 58, 63, .42);
+			color: #f5f1e8;
+			font-family: "Press Start 2P", "Courier New", monospace;
+			text-align: center;
+			image-rendering: pixelated;
+			animation: panel-hover 5.1s ease-in-out infinite;
+		}
+		.loading-status {
+			min-height: 22px;
+			margin: 0 0 13px;
+			font-size: 9px;
+			line-height: 1.8;
+			text-shadow: 2px 2px 0 #122529;
+		}
+		.progress-track {
+			position: relative;
+			height: 36px;
+			padding: 5px;
+			border: 3px solid #10272c;
+			border-radius: 2px;
+			background: #152b30;
+			box-shadow: inset 0 2px 4px rgba(0, 0, 0, .6), 0 3px 0 rgba(116, 161, 141, .5);
+			text-align: left;
+		}
+		.progress-fill {
+			position: relative;
+			height: 100%;
+			width: 0%;
+			overflow: hidden;
+			border-radius: 0;
+			background: linear-gradient(180deg, #65d7ff 0%, #168ce8 58%, #0870ca 100%);
+			box-shadow: inset 0 3px 0 rgba(255, 255, 255, .48), 0 0 12px rgba(34, 174, 255, .42);
+			transition: width 180ms ease-out;
+		}
+		.progress-fill::after {
+			position: absolute;
+			inset: 0;
+			background: repeating-linear-gradient(90deg, transparent 0 16px, rgba(255, 255, 255, .18) 16px 19px);
+			content: "";
+		}
+		.loader-screen.is-indeterminate .progress-fill { width: 38%; animation: loading-sweep 1.2s ease-in-out infinite alternate; }
+		.loader-footer {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 10px;
+			color: #c1d0c3;
+			font-size: 7px;
+			line-height: 1.8;
+		}
+		.loading-error { margin: 14px 0 0; color: #ffc7b9; font: 10px/1.8 "Press Start 2P", monospace; overflow-wrap: anywhere; }
+		.loader-retry {
+			margin-top: 14px;
+			padding: 9px 18px;
+			border: 2px solid #163c47;
+			border-radius: 2px;
+			background: linear-gradient(#65d8ff, #168be1);
+			box-shadow: 0 4px 0 #0c2930, -2px 0 rgba(18, 178, 255, .45), 2px 0 rgba(255, 58, 63, .45);
+			color: #fff;
+			font: 8px "Press Start 2P", "Courier New", monospace;
+			text-shadow: 1px 2px 0 #145173;
+			cursor: pointer;
+		}
+		.loader-retry[hidden], .loading-error[hidden] { display: none; }
+		.loader-panel.has-error .progress-fill { background: linear-gradient(#ff8e70, #d6404a); }
+		@keyframes loading-sweep { from { transform: translateX(0); } to { transform: translateX(145%); } }
+		@keyframes logo-hover { 0%, 100% { transform: translateY(0) rotate(-.5deg); } 50% { transform: translateY(-9px) rotate(.5deg); } }
+		@keyframes panel-hover { 0%, 100% { transform: translateY(0) rotate(.15deg); } 50% { transform: translateY(-4px) rotate(-.15deg); } }
+		@media (max-width: 480px) {
+			.loader-layout { height: 76vh; padding-top: 10vh; padding-bottom: 3vh; }
+			.loader-logo { font-size: 26px; }
+			.loader-version { top: 4vh; right: 4vw; font-size: 6px; }
+			.loader-panel { padding: 19px 14px 16px; }
+			.loading-status { font-size: 7px; }
+			.loader-footer { font-size: 6px; }
+		}
+		@media (min-width: 481px) and (max-width: 900px) {
+			.loader-logo { font-size: 56px; }
+		}
+		@media (prefers-reduced-motion: reduce) {
+			*, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+		}
+		#adminToggle, #adminOverlay { font-family: "Press Start 2P", "Courier New", monospace; }
+		#adminToggle {
+			position: fixed; top: 14px; right: 14px; z-index: 4; display: none;
+			padding: 10px 12px; border: 2px solid #10272c; border-radius: 2px;
+			background: #168be1; box-shadow: 0 4px 0 #0b1c20; color: #fff;
+			font-size: 10px; cursor: pointer;
+		}
+		#adminToggle:hover { background: #36a5f4; }
+		#adminToggle:focus-visible, #adminOverlay button:focus-visible, #adminOverlay input:focus-visible, #adminOverlay summary:focus-visible {
+			outline: 2px solid #f1c85a; outline-offset: 2px;
+		}
+		body.game-ready #adminToggle { display: block; }
+		#adminOverlay[hidden] { display: none; }
+		#adminOverlay {
+			position: fixed; top: 58px; right: 14px; z-index: 5;
+			width: min(440px, calc(100vw - 28px)); max-height: calc(100vh - 72px); overflow: auto;
+			padding: 16px; border: 2px solid #608086; border-radius: 4px;
+			background: rgba(10, 19, 22, .98); box-shadow: 0 8px 28px rgba(0, 0, 0, .58);
+			color: #f4f1e7; image-rendering: pixelated;
+		}
+		.admin-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+		.admin-heading { display: grid; gap: 6px; }
+		.admin-title { color: #f1c85a; font-size: 11px; }
+		.admin-subtitle { color: #9db4b0; font: 7px/1.5 "Press Start 2P", "Courier New", monospace; }
+		.admin-close, .admin-action {
+			min-height: 34px; border: 2px solid #172c32; border-radius: 2px;
+			background: #d94e43; box-shadow: 0 3px 0 #071114; color: #fff;
+			font: 9px "Press Start 2P", "Courier New", monospace; cursor: pointer;
+		}
+		.admin-close { width: 36px; font-size: 12px; }
+		.admin-action { transition: filter 120ms ease, transform 120ms ease; }
+		.admin-action:hover { filter: brightness(1.18); }
+		.admin-action:active { transform: translateY(2px); box-shadow: 0 1px 0 #071114; }
+		.admin-section { margin-top: 14px; padding-top: 12px; border-top: 1px solid #31494e; }
+		.admin-section[hidden], .admin-action[hidden] { display: none; }
+		.admin-section-title { margin: 0 0 10px; color: #f1c85a; font-size: 8px; }
+		.admin-label { display: block; margin-bottom: 7px; color: #b9d4d0; font-size: 8px; }
+		.admin-fast-select { display: flex; align-items: center; gap: 8px; color: #f5f1e8; font-size: 8px; line-height: 1.7; cursor: pointer; }
+		.admin-fast-select input { width: 16px; height: 16px; margin: 0; accent-color: #42a6ed; }
+		.admin-speed-row, .admin-field-row { display: flex; align-items: center; gap: 8px; }
+		.admin-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; margin-top: 12px; }
+		.admin-tab { min-height: 36px; border: 1px solid #547278; border-radius: 2px; background: #14272c; color: #c5d6ce; font: 8px "Press Start 2P", "Courier New", monospace; cursor: pointer; }
+		.admin-tab[aria-selected="true"] { border-color: #f1c85a; background: #24515b; color: #fff; }
+		.admin-tab-panel[hidden] { display: none; }
+		#adminSpeed { flex: 1; min-width: 0; accent-color: #42a6ed; }
+		#adminSpeedValue { width: 36px; color: #f1c85a; font-size: 9px; text-align: right; }
+		.admin-input {
+			min-width: 0; height: 34px; padding: 5px 7px; border: 1px solid #547278; border-radius: 2px;
+			background: #14272c; color: #fff; font: 9px "Press Start 2P", "Courier New", monospace;
+		}
+		.admin-input:focus { outline: 2px solid #f1c85a; outline-offset: 1px; }
+		#adminMoney { width: 108px; }
+		#adminJokerSearch { flex: 1; width: 100%; }
+		#adminJokerQuantity { width: 82px; }
+		#adminSearch { width: 100%; }
+		.admin-select { width: 100%; height: 38px; padding: 5px 7px; border: 1px solid #547278; border-radius: 2px; background: #14272c; color: #fff; font: 8px "Press Start 2P", "Courier New", monospace; }
+		.admin-select option { background: #14272c; }
+		.admin-card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+		.admin-card-field { min-width: 0; }
+		.admin-card-help { margin: 8px 0 0; color: #9db4b0; font: 7px/1.7 "Press Start 2P", "Courier New", monospace; }
+		.admin-joker-search-wrap { position: relative; flex: 1; min-width: 0; }
+		#adminJokerSuggestions {
+			position: absolute; top: calc(100% + 4px); left: 0; z-index: 1;
+			width: 100%; max-height: 180px; overflow-y: auto; margin: 0; padding: 4px;
+			border: 1px solid #608086; background: #0a1316; list-style: none;
+		}
+		#adminJokerSuggestions[hidden] { display: none; }
+		#adminJokerSuggestions [role="option"] {
+			display: block; width: 100%; padding: 8px; border: 0;
+			background: transparent; color: #f4f1e7; text-align: left;
+			font: 8px "Press Start 2P", "Courier New", monospace; cursor: pointer;
+		}
+		#adminJokerSuggestions [role="option"]:hover,
+		#adminJokerSuggestions [role="option"][aria-selected="true"] { background: #24515b; }
+		.admin-action { flex: 1; padding: 7px 5px; line-height: 1.5; }
+		.admin-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+		.admin-presets { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+		.admin-preset { min-height: 28px; padding: 5px 7px; border: 1px solid #547278; border-radius: 2px; background: #14272c; color: #dce8df; font: 7px "Press Start 2P", "Courier New", monospace; cursor: pointer; }
+		.admin-preset:hover { background: #24515b; }
+		.admin-status { min-height: 24px; margin: 12px 0 0; padding: 8px; border-left: 3px solid #42a6ed; background: #14272c; color: #c5d6ce; font: 7px/1.7 "Press Start 2P", "Courier New", monospace; overflow-wrap: anywhere; }
+		.admin-keybinds { position: sticky; bottom: -16px; z-index: 2; max-height: 34vh; overflow-y: auto; margin: 14px -16px -16px; padding: 10px 16px; border-top: 2px solid #608086; background: rgba(10, 19, 22, .99); color: #c5d6ce; font: 7px/1.8 "Press Start 2P", "Courier New", monospace; }
+		.admin-keybinds dl { display: grid; grid-template-columns: 82px 1fr; gap: 6px 10px; margin: 10px 0 0; }
+		.admin-keybinds dt { color: #f1c85a; }
+		.admin-keybinds dd { margin: 0; }
+		.admin-keybinds-note { margin: 10px 0 0; color: #9db4b0; }
+		.admin-empty { margin: 8px 0 0; color: #9db4b0; font: 7px/1.6 "Press Start 2P", "Courier New", monospace; }
+		@media (max-width: 480px) {
+			#adminToggle { top: 8px; right: 8px; }
+			#adminOverlay { top: 52px; right: 8px; width: calc(100vw - 16px); max-height: calc(100vh - 60px); padding: 12px; }
+			.admin-keybinds { bottom: -12px; margin-right: -12px; margin-left: -12px; padding-right: 12px; padding-left: 12px; }
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<div class="loader-screen is-indeterminate" id="loadingScreen" role="status" aria-live="polite">
+		<div class="loader-version">1.0.1o-FULL</div>
+		<div class="loader-layout">
+			<div class="loader-logo" aria-label="Balatro">
+				<span>BAL</span>
+				<span class="logo-card" aria-hidden="true">&#9824;</span>
+				<span>TRO</span>
+			</div>
+			<div class="loader-panel" id="loadingPanel">
+				<p class="loading-status" id="loadingStatus">CHECKING SAVE DATA</p>
+				<div class="progress-track" id="loadingTrack" role="progressbar" aria-label="Loading game" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+					<div class="progress-fill" id="loadingFill"></div>
+				</div>
+				<div class="loader-footer"><span>PLEASE WAIT</span><span id="loadingPercent">0%</span></div>
+				<p class="loading-error" id="loadingError" hidden></p>
+				<button class="loader-retry" id="loadingRetry" type="button" hidden>RETRY</button>
+			</div>
+		</div>
+	</div>
+	<button id="adminToggle" type="button" aria-expanded="false" aria-controls="adminOverlay">TOOLS</button>
+	<aside id="adminOverlay" role="dialog" aria-label="Game tools" hidden>
+		<div class="admin-head">
+			<div class="admin-heading">
+				<span class="admin-title">GAME TOOLKIT</span>
+				<span class="admin-subtitle">Run controls, quick boosts &amp; shortcuts</span>
+			</div>
+			<button class="admin-close" id="adminClose" type="button" aria-label="Close tools">X</button>
+		</div>
+		<section class="admin-section" data-admin-section="Search tools">
+			<label class="admin-label" for="adminSearch">Find a tool</label>
+			<input class="admin-input" id="adminSearch" type="search" placeholder="Search this tab..." autocomplete="off">
+			<p class="admin-empty" id="adminNoResults" hidden>No matching tools. Try another search.</p>
+		</section>
+		<div class="admin-tabs" role="tablist" aria-label="Tool categories">
+			<button class="admin-tab" id="adminToolsTab" type="button" role="tab" aria-selected="true" aria-controls="adminToolsPanel" data-admin-tab="tools">TOOLS</button>
+			<button class="admin-tab" id="adminCardsTab" type="button" role="tab" aria-selected="false" aria-controls="adminCardsPanel" data-admin-tab="cards" tabindex="-1">PLAYING CARDS</button>
+		</div>
+		<div class="admin-tab-panel" id="adminToolsPanel" role="tabpanel" aria-labelledby="adminToolsTab" data-admin-tab-panel="tools">
+		<section class="admin-section" data-admin-section="Handy fast hand selection drag sweep">
+			<label class="admin-label" for="adminFastHandSelect">Fast hand selection</label>
+			<label class="admin-fast-select"><input id="adminFastHandSelect" type="checkbox" checked> Hold and sweep across cards to select or deselect</label>
+			<p class="admin-card-help">Enabled by default. Start a sweep over an unselected card to select cards, or over a selected card to deselect them. The first card sets the mode for the whole sweep.</p>
+		</section>
+		<section class="admin-section" data-admin-section="Game speed">
+			<label class="admin-label" for="adminSpeed">Game speed</label>
+			<div class="admin-speed-row">
+				<input id="adminSpeed" type="range" min="1" max="100" step="1" value="1" aria-label="Game speed">
+				<output id="adminSpeedValue" for="adminSpeed">1</output>
+				<button class="admin-preset" id="adminSpeedReset" type="button" aria-label="Reset game speed to 1">RESET</button>
+			</div>
+		</section>
+		<section class="admin-section" data-admin-section="Add money cash">
+			<label class="admin-label" for="adminMoney">Add money</label>
+			<div class="admin-field-row">
+				<input class="admin-input" id="adminMoney" type="number" min="1" max="1000000" step="1" value="10" inputmode="numeric">
+				<button class="admin-action" id="adminAddMoney" type="button">ADD $</button>
+			</div>
+			<div class="admin-presets" aria-label="Money presets">
+				<button class="admin-preset" type="button" data-money-preset="10">+$10</button>
+				<button class="admin-preset" type="button" data-money-preset="50">+$50</button>
+				<button class="admin-preset" type="button" data-money-preset="100">+$100</button>
+				<button class="admin-preset" type="button" data-money-preset="1000">+$1,000</button>
+			</div>
+		</section>
+		<section class="admin-section" data-admin-section="Add Joker uncap Joker slots limit">
+			<label class="admin-label" for="adminJokerSearch">Add a Joker</label>
+			<div class="admin-field-row">
+				<div class="admin-joker-search-wrap">
+					<input class="admin-input" id="adminJokerSearch" type="search" maxlength="40" placeholder="Name or key" role="combobox" aria-autocomplete="list" aria-controls="adminJokerSuggestions" aria-expanded="false" autocomplete="off">
+					<ul id="adminJokerSuggestions" role="listbox" aria-label="Joker suggestions" hidden></ul>
+				</div>
+				<input class="admin-input" id="adminJokerQuantity" type="number" min="1" max="9999" step="1" value="1" aria-label="Joker quantity">
+			</div>
+			<button class="admin-action" id="adminAddJoker" type="button" style="width:100%;margin-top:8px">ADD JOKER</button>
+			<button class="admin-preset" id="adminUncapJokers" type="button" style="width:100%;margin-top:8px">UNCAP JOKER SLOTS (9999)</button>
+			<p class="admin-card-help">Uncap first to add more Jokers than your current slots allow.</p>
+		</section>
+		<section class="admin-section" data-admin-section="Run progression round ante hand discard boss reroll">
+			<h2 class="admin-section-title">RUN PROGRESSION</h2>
+			<div class="admin-actions">
+				<button class="admin-action" data-admin-action="round" type="button">+1 ROUND</button>
+				<button class="admin-action" data-admin-action="ante" type="button">+1 ANTE</button>
+				<button class="admin-action" data-admin-action="hand" type="button">+1 HAND</button>
+				<button class="admin-action" data-admin-action="discard" type="button">+1 DISCARD</button>
+				<button class="admin-action" data-admin-action="boss" type="button">BOSS REROLL</button>
+			</div>
+		</section>
+		<section class="admin-section" data-admin-section="Score chips mult multiplier reset">
+			<h2 class="admin-section-title">SCORE BOOSTS</h2>
+			<div class="admin-actions">
+				<button class="admin-action" data-admin-action="chips" type="button">+10 CHIPS</button>
+				<button class="admin-action" data-admin-action="mult" type="button">+10 MULT</button>
+				<button class="admin-action" data-admin-action="xchips" type="button">X2 CHIPS</button>
+				<button class="admin-action" data-admin-action="xmult" type="button">X10 MULT</button>
+				<button class="admin-action" data-admin-action="reset" type="button">RESET SCORE</button>
+			</div>
+		</section>
+		<section class="admin-section" data-admin-section="Run utilities background win lose end">
+			<h2 class="admin-section-title">RUN UTILITIES</h2>
+			<div class="admin-actions">
+				<button class="admin-action" data-admin-action="background" type="button">BACKGROUND</button>
+				<button class="admin-action" data-admin-action="win" type="button">WIN RUN</button>
+				<button class="admin-action" data-admin-action="lose" type="button">END RUN</button>
+			</div>
+		</section>
+		</div>
+		<div class="admin-tab-panel" id="adminCardsPanel" role="tabpanel" aria-labelledby="adminCardsTab" data-admin-tab-panel="cards" hidden>
+			<section class="admin-section" data-admin-section="Playing card add deck suit rank number ace king queen jack">
+				<h2 class="admin-section-title">BUILD A PLAYING CARD</h2>
+				<div class="admin-card-grid">
+					<div class="admin-card-field">
+						<label class="admin-label" for="adminCardSuit">Suit</label>
+						<select class="admin-select" id="adminCardSuit">
+							<option value="S">Spades</option>
+							<option value="H">Hearts</option>
+							<option value="C">Clubs</option>
+							<option value="D">Diamonds</option>
+						</select>
+					</div>
+					<div class="admin-card-field">
+						<label class="admin-label" for="adminCardRank">Rank</label>
+						<select class="admin-select" id="adminCardRank">
+							<option value="A">Ace</option>
+							<option value="K">King</option>
+							<option value="Q">Queen</option>
+							<option value="J">Jack</option>
+							<option value="10">10</option>
+							<option value="9">9</option>
+							<option value="8">8</option>
+							<option value="7">7</option>
+							<option value="6">6</option>
+							<option value="5">5</option>
+							<option value="4">4</option>
+							<option value="3">3</option>
+							<option value="2">2</option>
+						</select>
+					</div>
+					<div class="admin-card-field">
+						<label class="admin-label" for="adminCardEnhancement">Card type</label>
+						<select class="admin-select" id="adminCardEnhancement">
+							<option value="c_base">Base</option>
+							<option value="m_bonus">Bonus</option>
+							<option value="m_mult">Mult</option>
+							<option value="m_wild">Wild</option>
+							<option value="m_glass">Glass</option>
+							<option value="m_steel">Steel</option>
+							<option value="m_stone">Stone</option>
+							<option value="m_gold">Gold</option>
+							<option value="m_lucky">Lucky</option>
+						</select>
+					</div>
+					<div class="admin-card-field">
+						<label class="admin-label" for="adminCardEdition">Edition</label>
+						<select class="admin-select" id="adminCardEdition">
+							<option value="none">None</option>
+							<option value="foil">Foil</option>
+							<option value="holo">Holographic</option>
+							<option value="polychrome">Polychrome</option>
+							<option value="negative">Negative</option>
+						</select>
+					</div>
+					<div class="admin-card-field">
+						<label class="admin-label" for="adminCardSeal">Seal</label>
+						<select class="admin-select" id="adminCardSeal">
+							<option value="none">None</option>
+							<option value="Red">Red</option>
+							<option value="Blue">Blue</option>
+							<option value="Gold">Gold</option>
+							<option value="Purple">Purple</option>
+						</select>
+					</div>
+					<div class="admin-card-field">
+						<label class="admin-label" for="adminCardQuantity">Quantity to add</label>
+						<input class="admin-input" id="adminCardQuantity" type="number" min="1" max="9999" step="1" value="1" inputmode="numeric" style="width:100%">
+					</div>
+				</div>
+				<p class="admin-card-help">Adds the chosen playing card to your deck. Joker is a separate card type; use the Tools tab to add Jokers.</p>
+				<button class="admin-action" id="adminAddPlayingCard" type="button" style="width:100%;margin-top:10px">ADD CARD TO DECK</button>
+			</section>
+			<section class="admin-section" data-admin-section="Delete remove cards deck suit rank quantity">
+				<h2 class="admin-section-title">REMOVE CARDS FROM DECK</h2>
+				<div class="admin-card-grid">
+					<div class="admin-card-field">
+						<label class="admin-label" for="adminRemoveSuit">Suit</label>
+						<select class="admin-select" id="adminRemoveSuit">
+							<option value="S">Spades</option>
+							<option value="H">Hearts</option>
+							<option value="C">Clubs</option>
+							<option value="D">Diamonds</option>
+						</select>
+					</div>
+					<div class="admin-card-field">
+						<label class="admin-label" for="adminRemoveRank">Rank</label>
+						<select class="admin-select" id="adminRemoveRank">
+							<option value="A">Ace</option>
+							<option value="K">King</option>
+							<option value="Q">Queen</option>
+							<option value="J">Jack</option>
+							<option value="10">10</option>
+							<option value="9">9</option>
+							<option value="8">8</option>
+							<option value="7">7</option>
+							<option value="6">6</option>
+							<option value="5">5</option>
+							<option value="4">4</option>
+							<option value="3">3</option>
+							<option value="2">2</option>
+						</select>
+					</div>
+					<div class="admin-card-field">
+						<label class="admin-label" for="adminRemoveQuantity">Quantity to remove</label>
+						<input class="admin-input" id="adminRemoveQuantity" type="number" min="1" max="9999" step="1" value="1" inputmode="numeric" style="width:100%">
+					</div>
+				</div>
+				<p class="admin-card-help">Removes up to this many matching cards from the deck, hand, play, or discard pile.</p>
+				<button class="admin-action" id="adminRemovePlayingCards" type="button" style="width:100%;margin-top:10px">REMOVE MATCHING CARDS</button>
+			</section>
+		</div>
+		<p class="admin-status" id="adminStatus" role="status" aria-live="polite">Ready. Press F2 to close tools.</p>
+		<section class="admin-keybinds" aria-labelledby="adminKeybindTitle">
+			<h2 class="admin-section-title" id="adminKeybindTitle">KEYBINDS — ALWAYS VISIBLE</h2>
+			<dl>
+				<dt>Hold + sweep</dt><dd>Hold left mouse and sweep across the hand. The first card determines whether the sweep selects or deselects.</dd>
+				<dt>Q</dt><dd>On a hovered card: cycle Foil → Holographic → Polychrome → Negative → none.</dd>
+				<dt>F2</dt><dd>Open or close this toolkit.</dd>
+				<dt>Tab</dt><dd>Open the game's developer tools.</dd>
+				<dt>1 / 2 / 3</dt><dd>In an overlay: unlock / discover / add the hovered item.</dd>
+				<dt>H</dt><dd>Toggle the debug UI.</dd>
+				<dt>B</dt><dd>Start a new run.</dd>
+				<dt>L</dt><dd>Reload the saved run.</dd>
+				<dt>J</dt><dd>Return to the splash screen.</dd>
+				<dt>8 / 9</dt><dd>Toggle cursor visibility / tooltips.</dd>
+				<dt>Space</dt><dd>Run the game's live test.</dd>
+				<dt>V</dt><dd>Toggle the performance profiler.</dd>
+				<dt>P</dt><dd>Toggle performance mode.</dd>
+				<dt>Hold R</dt><dd>Restart the current run.</dd>
+				<dt>Esc</dt><dd>Open options or back out of the current menu.</dd>
+				<dt>Arrows / Enter</dt><dd>Navigate and activate focused controls when supported.</dd>
+			</dl>
+			<p class="admin-keybinds-note">Some developer shortcuts may not be enabled in every build or screen. Q acts on the card under the cursor.</p>
+		</section>
+	</aside>
+	<script>
+		function openGameCache() {
+			return new Promise((resolve, reject) => {
+				const request = indexedDB.open("game_data_cache", 1);
+				request.onupgradeneeded = () => request.result.createObjectStore("files");
+				request.onsuccess = () => resolve(request.result);
+				request.onerror = () => reject(request.error);
+			});
+		}
+
+		async function readCachedGameData() {
+			let database;
+			try {
+				database = await openGameCache();
+				return await new Promise((resolve, reject) => {
+					const request = database.transaction("files", "readonly")
+						.objectStore("files").get(GAME_CACHE_KEY);
+					request.onsuccess = () => resolve(request.result || null);
+					request.onerror = () => reject(request.error);
+				});
+			} catch (error) {
+				console.warn("Could not read cached game data:", error);
+				return null;
+			} finally {
+				if (database) database.close();
+			}
+		}
+
+		async function saveGameData(data) {
+			let database;
+			try {
+				database = await openGameCache();
+				await new Promise((resolve, reject) => {
+					const transaction = database.transaction("files", "readwrite");
+					const store = transaction.objectStore("files");
+					store.put(data, GAME_CACHE_KEY);
+					store.delete("game.love");
+					transaction.oncomplete = resolve;
+					transaction.onerror = () => reject(transaction.error);
+					transaction.onabort = () => reject(transaction.error);
+				});
+			} catch (error) {
+				console.warn("Could not save game data in the browser cache:", error);
+			} finally {
+				if (database) database.close();
+			}
+		}
+
+					const adminToggle = document.getElementById("adminToggle");
+					const adminOverlay = document.getElementById("adminOverlay");
+					const adminStatus = document.getElementById("adminStatus");
+
+					function setAdminOverlayOpen(open) {
+						adminOverlay.hidden = !open;
+						adminToggle.setAttribute("aria-expanded", String(open));
+						if (open) setTimeout(() => document.getElementById("adminClose").focus(), 0);
+					}
+
+					adminToggle.addEventListener("click", () => {
+						const open = adminOverlay.hidden;
+						setAdminOverlayOpen(open);
+						if (!open) adminToggle.focus();
+					});
+					document.getElementById("adminClose").addEventListener("click", () => {
+						setAdminOverlayOpen(false);
+						adminToggle.focus();
+					});
+					window.addEventListener("pointerdown", event => {
+						if (!adminOverlay.hidden && !adminOverlay.contains(event.target) && event.target !== adminToggle) {
+							setAdminOverlayOpen(false);
+						}
+					}, true);
+					window.addEventListener("keydown", event => {
+						if (event.key === "F2" && document.body.classList.contains("game-ready")) {
+							event.preventDefault();
+							event.stopImmediatePropagation();
+							const open = adminOverlay.hidden;
+							setAdminOverlayOpen(open);
+							if (!open) adminToggle.focus();
+						} else if (event.key === "Escape" && !adminOverlay.hidden) {
+							event.preventDefault();
+							setAdminOverlayOpen(false);
+							adminToggle.focus();
+						}
+					}, true);
+					const adminSearch = document.getElementById("adminSearch");
+					const adminNoResults = document.getElementById("adminNoResults");
+					const adminTabs = [...adminOverlay.querySelectorAll("[data-admin-tab]")];
+					const adminTabPanels = [...adminOverlay.querySelectorAll("[data-admin-tab-panel]")];
+					function filterAdminSections() {
+						const query = adminSearch.value.trim().toLocaleLowerCase();
+						let matches = 0;
+						const activePanel = adminTabPanels.find(panel => !panel.hidden);
+						activePanel.querySelectorAll("[data-admin-section]").forEach(section => {
+							const searchableText = `${section.dataset.adminSection} ${section.textContent}`.toLocaleLowerCase();
+							const visible = !query || searchableText.includes(query);
+							section.hidden = !visible;
+							if (visible) matches += 1;
+						});
+						adminNoResults.hidden = matches > 0;
+					}
+					adminTabs.forEach(tab => {
+						tab.addEventListener("click", () => {
+							adminTabs.forEach(item => {
+								const selected = item === tab;
+								item.setAttribute("aria-selected", String(selected));
+								item.tabIndex = selected ? 0 : -1;
+							});
+							adminTabPanels.forEach(panel => { panel.hidden = panel.id !== tab.getAttribute("aria-controls"); });
+							filterAdminSections();
+						});
+					});
+					adminSearch.addEventListener("input", filterAdminSections);
+
+					function sendAdminCommand(action, ...values) {
+						if (typeof Module === "undefined" || !Module.FS_createDataFile) {
+							adminStatus.textContent = "Game is not ready";
+							return false;
+						}
+						const fields = [action, ...values.map(value => String(value).replace(/[\t\r\n]/g, " "))];
+						const command = new TextEncoder().encode(fields.join("\t"));
+						const path = "/home/web_user/love/admin_overlay_command";
+						try {
+							if (Module.FS_createPath) Module.FS_createPath("/", "home/web_user/love", true, true);
+							try { Module.FS_unlink(path); } catch (_) {}
+							Module.FS_createDataFile("/home/web_user/love", "admin_overlay_command", command, true, true, true);
+							adminStatus.textContent = "Command sent";
+							return true;
+						} catch (error) {
+							console.error("Could not send game command:", error);
+							adminStatus.textContent = "Could not send command";
+							return false;
+						}
+					}
+
+					const adminSpeed = document.getElementById("adminSpeed");
+					const adminSpeedValue = document.getElementById("adminSpeedValue");
+					const adminJokerSearch = document.getElementById("adminJokerSearch");
+					const adminJokerSuggestions = document.getElementById("adminJokerSuggestions");
+					const jokerNames = [
+						"8 Ball", "Abstract Joker", "Acrobat", "Ancient Joker", "Arrowhead", "Astronomer", "Banner", "Baron",
+						"Baseball Card", "Blackboard", "Bloodstone", "Blue Joker", "Blueprint", "Bootstraps", "Brainstorm", "Bull",
+						"Burglar", "Burnt Joker", "Business Card", "Canio", "Campfire", "Card Sharp", "Cartomancer", "Castle",
+						"Cavendish", "Ceremonial Dagger", "Certificate", "Chaos the Clown", "Chicot", "Clever Joker", "Cloud 9",
+						"Constellation", "Crafty Joker", "Crazy Joker", "Credit Card", "Delayed Gratification", "Devious Joker",
+						"Diet Cola", "DNA", "Drunkard", "Driver's License", "Droll Joker", "Dusk", "The Duo", "Egg", "Erosion",
+						"Even Steven", "Faceless Joker", "The Family", "Fibonacci", "Flash Card", "Flower Pot", "Fortune Teller",
+						"Four Fingers", "Gift Card", "Glass Joker", "Gluttonous Joker", "Golden Joker", "Greedy Joker", "Green Joker",
+						"Gros Michel", "Hack", "Half Joker", "Hallucination", "Hanging Chad", "Hiker", "Hit the Road", "Hologram",
+						"Ice Cream", "The Idol", "Invisible Joker", "Joker", "Jolly Joker", "Juggler", "Loyalty Card", "Luchador",
+						"Lucky Cat", "Lusty Joker", "Mad Joker", "Madness", "Mail-In Rebate", "Marble Joker", "Matador", "Merry Andy",
+						"Midas Mask", "Mime", "Misprint", "Mr. Bones", "Mystic Summit", "Obelisk", "Odd Todd", "Onyx Agate",
+						"Oops! All 6s", "The Order", "Pareidolia", "Perkeo", "Photograph", "Popcorn", "Raised Fist", "Ramen",
+						"Red Card", "Reserved Parking", "Ride the Bus", "Riff-Raff", "Showman", "Rocket", "Rough Gem", "Runner",
+						"Satellite", "Scary Face", "Scholar", "Séance", "Seeing Double", "Seltzer", "Shoot the Moon", "Shortcut",
+						"Sixth Sense", "Sly Joker", "Smeared Joker", "Smiley Face", "Sock and Buskin", "Space Joker", "Splash",
+						"Square Joker", "Steel Joker", "Joker Stencil", "Stone Joker", "Stuntman", "Supernova", "Superposition",
+						"Swashbuckler", "Throwback", "Golden Ticket", "To the Moon", "To Do List", "Trading Card", "The Tribe",
+						"Triboulet", "The Trio", "Troubadour", "Spare Trousers", "Turtle Bean", "Vagabond", "Vampire",
+						"Walkie Talkie", "Wee Joker", "Wily Joker", "Wrathful Joker", "Yorick", "Zany Joker"
+					];
+					function normalizeJokerSearch(value) {
+						return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+					}
+					function renderJokerSuggestions() {
+						const query = normalizeJokerSearch(adminJokerSearch.value.trim());
+						adminJokerSuggestions.replaceChildren();
+						if (!query) {
+							adminJokerSuggestions.hidden = true;
+							adminJokerSearch.setAttribute("aria-expanded", "false");
+							return;
+						}
+						const matches = jokerNames
+							.filter(name => normalizeJokerSearch(name).includes(query))
+							.sort((a, b) => Number(!normalizeJokerSearch(a).startsWith(query)) - Number(!normalizeJokerSearch(b).startsWith(query)) || a.localeCompare(b))
+							.slice(0, 8);
+						for (const name of matches) {
+							const option = document.createElement("button");
+							option.type = "button";
+							option.setAttribute("role", "option");
+							option.setAttribute("aria-selected", "false");
+							option.dataset.value = name;
+							option.textContent = name;
+							adminJokerSuggestions.append(option);
+						}
+						adminJokerSuggestions.hidden = matches.length === 0;
+						adminJokerSearch.setAttribute("aria-expanded", String(matches.length > 0));
+					}
+					adminJokerSearch.addEventListener("input", renderJokerSuggestions);
+					adminJokerSearch.addEventListener("focus", renderJokerSuggestions);
+					adminJokerSuggestions.addEventListener("click", event => {
+						const option = event.target.closest("[role=option]");
+						if (!option) return;
+						adminJokerSearch.value = option.dataset.value;
+						adminJokerSuggestions.hidden = true;
+						adminJokerSearch.setAttribute("aria-expanded", "false");
+						adminStatus.textContent = `Selected ${option.textContent}`;
+						adminJokerSearch.focus();
+					});
+					adminJokerSearch.addEventListener("blur", () => setTimeout(() => {
+						adminJokerSuggestions.hidden = true;
+						adminJokerSearch.setAttribute("aria-expanded", "false");
+					}, 0));
+					adminSpeed.addEventListener("input", () => {
+						adminSpeedValue.value = adminSpeed.value;
+						adminSpeedValue.textContent = adminSpeed.value;
+						sendAdminCommand("speed", adminSpeed.value);
+					});
+					document.getElementById("adminSpeedReset").addEventListener("click", () => {
+						adminSpeed.value = "1";
+						adminSpeed.dispatchEvent(new Event("input", { bubbles: true }));
+					});
+					document.getElementById("adminFastHandSelect").addEventListener("change", event => {
+						sendAdminCommand("fast_hand_select", event.target.checked ? 1 : 0);
+					});
+					document.getElementById("adminAddMoney").addEventListener("click", () => {
+						const moneyInput = document.getElementById("adminMoney");
+						const amount = moneyInput.valueAsNumber;
+						if (!Number.isInteger(amount) || amount < 1 || amount > 1000000) {
+							adminStatus.textContent = "Enter a whole amount from 1 to 1,000,000";
+							moneyInput.focus();
+							return;
+						}
+						sendAdminCommand("money", amount);
+					});
+					document.querySelectorAll("[data-money-preset]").forEach(button => {
+						button.addEventListener("click", () => {
+							const amount = Number(button.dataset.moneyPreset);
+							document.getElementById("adminMoney").value = String(amount);
+							sendAdminCommand("money", amount);
+						});
+					});
+					document.getElementById("adminAddJoker").addEventListener("click", () => {
+						const search = adminJokerSearch.value.trim();
+						const quantityInput = document.getElementById("adminJokerQuantity");
+						const quantity = quantityInput.valueAsNumber;
+						if (!search) {
+							adminStatus.textContent = "Enter a Joker name or key first";
+							adminJokerSearch.focus();
+							return;
+						}
+						if (!Number.isInteger(quantity) || quantity < 1 || quantity > 9999) {
+							adminStatus.textContent = "Joker quantity must be a whole number from 1 to 9,999";
+							quantityInput.focus();
+							return;
+						}
+						sendAdminCommand("add_joker", search, quantity);
+					});
+					document.getElementById("adminUncapJokers").addEventListener("click", () => {
+						sendAdminCommand("joker_limit");
+					});
+					document.getElementById("adminAddPlayingCard").addEventListener("click", () => {
+						const quantityInput = document.getElementById("adminCardQuantity");
+						const quantity = quantityInput.valueAsNumber;
+						if (!Number.isInteger(quantity) || quantity < 1 || quantity > 9999) {
+							adminStatus.textContent = "Card quantity must be a whole number from 1 to 9,999";
+							quantityInput.focus();
+							return;
+						}
+						sendAdminCommand(
+							"add_card",
+							document.getElementById("adminCardRank").value,
+							document.getElementById("adminCardSuit").value,
+							document.getElementById("adminCardEnhancement").value,
+							document.getElementById("adminCardEdition").value,
+							document.getElementById("adminCardSeal").value,
+							quantity
+						);
+					});
+					document.getElementById("adminRemovePlayingCards").addEventListener("click", () => {
+						const quantityInput = document.getElementById("adminRemoveQuantity");
+						const quantity = quantityInput.valueAsNumber;
+						if (!Number.isInteger(quantity) || quantity < 1 || quantity > 9999) {
+							adminStatus.textContent = "Removal quantity must be a whole number from 1 to 9,999";
+							quantityInput.focus();
+							return;
+						}
+						sendAdminCommand(
+							"remove_card",
+							document.getElementById("adminRemoveSuit").value,
+							document.getElementById("adminRemoveRank").value,
+							quantity
+						);
+					});
+					document.querySelectorAll("[data-admin-action]").forEach(button => {
+						button.addEventListener("click", () => sendAdminCommand(button.dataset.adminAction));
+					});
+
+					function updateLoading(message, percent, indeterminate = false) {
+			const screen = document.getElementById("loadingScreen");
+			const value = Math.max(0, Math.min(100, Math.round(percent)));
+			document.getElementById("loadingStatus").textContent = message;
+			document.getElementById("loadingPercent").textContent = `${value}%`;
+			document.getElementById("loadingTrack").setAttribute("aria-valuenow", String(value));
+			document.getElementById("loadingFill").style.width = `${value}%`;
+			screen.classList.toggle("is-indeterminate", indeterminate);
+		}
+
+		function nextPaint() {
+			return new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+		}
+
+		function loadGameModule() {
+			return new Promise((resolve, reject) => {
+				const script = document.createElement("script");
+				script.src = "game.js";
+				script.onload = resolve;
+				script.onerror = () => reject(new Error("Could not load game module"));
+				document.head.appendChild(script);
+			});
+		}
+
+		(async () => {
+			updateLoading("CHECKING SAVE DATA", 2, true);
+			let data = await readCachedGameData();
+			if (!data) {
+				updateLoading("LOADING GAME MODULE", 5, true);
+				await loadGameModule();
+				updateLoading("PREPARING GAME ARCHIVE", 89, true);
+				data = await getSource();
+				void saveGameData(data);
+			} else {
+				updateLoading("RESTORING SAVED GAME", 89, true);
+			}
+
+			updateLoading("STARTING GAME", 95, true);
+			Module = {
+				INITIAL_MEMORY: 2 ** 28,
+				canvas: document.getElementById("canvas"),
+				printErr: console.error,
+				print: message => {
+					const text = String(message);
+					const prefix = "__BALATRO_ADMIN__:";
+					if (text.startsWith(prefix)) adminStatus.textContent = text.slice(prefix.length);
+					else console.log(message);
+				},
+				arguments: ["game.love"]
+			};
+			Module.preRun = [function() {
+				Module.addRunDependency("fp game.love");
+				const ptr = Module.getMemory(data.length);
+				Module.HEAPU8.set(data, ptr);
+				Module.FS_createDataFile("/", "game.love", data, true, true, true);
+				Module.removeRunDependency("fp game.love");
+			}];
+			await Love(Module);
+			await nextPaint();
+			updateLoading("READY", 100);
+			const screen = document.getElementById("loadingScreen");
+			screen.classList.add("is-ready");
+			setTimeout(() => {
+				screen.hidden = true;
+				document.body.classList.add("game-ready");
+			}, 320);
+		})().catch(error => {
+			console.error(error);
+			updateLoading("LOAD FAILED", 100);
+			document.getElementById("loadingPanel").classList.add("has-error");
+			document.getElementById("loadingError").textContent = error.message || "The game could not be loaded.";
+			document.getElementById("loadingError").hidden = false;
+			document.getElementById("loadingRetry").hidden = false;
+		});
+		document.getElementById("loadingRetry").addEventListener("click", () => location.reload());
+	</script>
+</body>
+</html>
