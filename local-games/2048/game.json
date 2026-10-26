@@ -1,0 +1,313 @@
+{
+  "slug": "2048",
+  "title": "2048",
+  "type": "HTML",
+  "developer": "Gabriele Cirulli",
+  "description": "Join the tiles and reach 2048! Experience this popular and addictive puzzle game in its original version, available to play completely free and loved by millions. Do you have what it takes to reach 2048?",
+  "tags": [
+    "Strategy",
+    "Puzzle",
+    "Casual",
+    "Minimalist",
+    "Math"
+  ],
+  "controls": [
+    {
+      "action": "Up",
+      "keys": [
+        {
+          "key": "ArrowUp",
+          "keyCode": 38
+        },
+        {
+          "key": "KeyW",
+          "keyCode": 87
+        },
+        {
+          "key": "KeyK",
+          "keyCode": 75
+        }
+      ]
+    },
+    {
+      "action": "Down",
+      "keys": [
+        {
+          "key": "ArrowDown",
+          "keyCode": 40
+        },
+        {
+          "key": "KeyS",
+          "keyCode": 83
+        },
+        {
+          "key": "KeyJ",
+          "keyCode": 74
+        }
+      ]
+    },
+    {
+      "action": "Left",
+      "keys": [
+        {
+          "key": "ArrowLeft",
+          "keyCode": 37
+        },
+        {
+          "key": "KeyA",
+          "keyCode": 65
+        },
+        {
+          "key": "KeyH",
+          "keyCode": 72
+        }
+      ]
+    },
+    {
+      "action": "Right",
+      "keys": [
+        {
+          "key": "ArrowRight",
+          "keyCode": 39
+        },
+        {
+          "key": "KeyD",
+          "keyCode": 68
+        },
+        {
+          "key": "KeyL",
+          "keyCode": 76
+        }
+      ]
+    },
+    {
+      "action": "New Game",
+      "keys": [
+        {
+          "key": "KeyR",
+          "keyCode": 82
+        },
+        {
+          "key": "KeyN",
+          "keyCode": 78
+        }
+      ]
+    },
+    {
+      "action": "Undo",
+      "keys": [
+        {
+          "key": "Digit1",
+          "keyCode": 49
+        }
+      ]
+    },
+    {
+      "action": "Swap Two Tiles",
+      "keys": [
+        {
+          "key": "Digit2",
+          "keyCode": 50
+        }
+      ]
+    },
+    {
+      "action": "Delete Tiles By Number",
+      "keys": [
+        {
+          "key": "Digit3",
+          "keyCode": 51
+        }
+      ]
+    },
+    {
+      "action": "Select",
+      "keys": [
+        {
+          "key": "Enter",
+          "keyCode": 13
+        }
+      ]
+    }
+  ],
+  "gamepadControls": [
+    {
+      "action": "Up",
+      "axes": [
+        {
+          "index": 1,
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "action": "Down",
+      "axes": [
+        {
+          "index": 1,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "action": "Left",
+      "axes": [
+        {
+          "index": 0,
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "action": "Right",
+      "axes": [
+        {
+          "index": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "action": "New Game",
+      "buttons": [
+        9
+      ]
+    },
+    {
+      "action": "Undo",
+      "buttons": [
+        2
+      ]
+    },
+    {
+      "action": "Swap Two Tiles",
+      "buttons": [
+        3
+      ]
+    },
+    {
+      "action": "Delete Tiles By Number",
+      "buttons": [
+        1
+      ]
+    },
+    {
+      "action": "Select",
+      "buttons": [
+        0
+      ]
+    }
+  ],
+  "controllerSupport": false,
+  "sourceId": "a273b97f-4069-4387-b19a-1e436a0e2e0c",
+  "sourceVersion": "1",
+  "sourceUrl": "https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/index.html",
+  "baseUrl": "https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/",
+  "entry": "/index.html",
+  "entryUrl": "https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/index.html",
+  "status": "done",
+  "sizeBytes": 4688496,
+  "assetCount": 86,
+  "failed": [
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/favicon180.png",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/favicon180.png",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/assets/DebugPane-iZswbu64.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/assets/DebugPane-iZswbu64.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/assets/assets/DebugPane-Dd-fN_bv.css",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/assets/assets/DebugPane-Dd-fN_bv.css",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/assets/AsyncContent-C1In_eeA.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/assets/AsyncContent-C1In_eeA.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/assets/AsyncContent-BhqUFpRf.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/assets/AsyncContent-BhqUFpRf.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/whatsNew-FC9r-OXv.jpg",
+      "error": "HTTP 404 for https://playobsidian.com/assets/whatsNew-FC9r-OXv.jpg",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/partner1Authenticate-CnXhhWP4.jpg",
+      "error": "HTTP 404 for https://playobsidian.com/assets/partner1Authenticate-CnXhhWP4.jpg",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/tutorialDone-6O6GgIrH.jpg",
+      "error": "HTTP 404 for https://playobsidian.com/assets/tutorialDone-6O6GgIrH.jpg",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/partner1Welcome-DOKpzOU8.jpg",
+      "error": "HTTP 404 for https://playobsidian.com/assets/partner1Welcome-DOKpzOU8.jpg",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/thumbnail256.png",
+      "error": "HTTP 404 for https://playobsidian.com/thumbnail256.png",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/Rubik-SemiBold.ttf",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/Rubik-SemiBold.ttf",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/Rubik-MediumItalic.ttf",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/Rubik-MediumItalic.ttf",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/Rubik-Italic.ttf",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/Rubik-Italic.ttf",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/Rubik-Light.ttf",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/Rubik-Light.ttf",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/assets/DebugPane-CVAF1-me.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/assets/DebugPane-CVAF1-me.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/assets/pixi.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/assets/pixi.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/assets/Pixi.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/a273b97f-4069-4387-b19a-1e436a0e2e0c/1/assets/Pixi.js",
+      "status": 404
+    }
+  ],
+  "mirroredAt": "2026-10-26T09:25:51.604Z",
+  "verifiedAt": "2026-10-26T09:26:16.685Z",
+  "verification": {
+    "external": 0,
+    "local404": 0,
+    "failures": 0,
+    "title": "2048 • Play the Free Online Game",
+    "crossOriginIsolated": true,
+    "sharedArrayBuffer": "function",
+    "canvas": {
+      "width": 576,
+      "height": 576
+    },
+    "nonBlack": "err:Failed to execute 'getContext' on 'HTMLCanvasElement': Cannot get context from a canvas that has transferred its control to offscreen."
+  }
+}

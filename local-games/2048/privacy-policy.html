@@ -1,0 +1,1137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<script src="/cdn/assets/local-games/2048/__offline__/bootstrap.js"></script>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
+    />
+    <title data-original="2048 • Play the Free Online Game">
+      Privacy Policy • 2048 • Play the Free Online Game
+    </title>
+    <meta
+      name="description"
+      content="Join the tiles and reach 2048! Experience this popular and addictive puzzle game in its original version, available to play completely free and loved by millions. Do you have what it takes to reach 2048?"
+    />
+    <meta name="author" content="Gabriele Cirulli" />
+    <meta name="creator" content="Gabriele Cirulli" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="direction" content="ltr" />
+    <meta
+      name="keywords"
+      content="2048, game, original, free, online, puzzle, logic, math, numbers, tiles, join, reach, gabriele cirulli, open source, open-source"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="./Rubik-VariableWeight.woff2"
+      type="font/woff2"
+    />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="2048" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="apple-touch-icon" href="./favicon180.png" sizes="180x180" />
+    <link
+      rel="icon"
+      href="./faviconSimple.svg"
+      type="image/svg+xml"
+      sizes="any"
+    />
+    <link
+      rel="icon"
+      href="./faviconSimple48.png"
+      type="image/png"
+      sizes="48x48"
+    />
+    <link
+      rel="icon"
+      href="./faviconSimple96.png"
+      type="image/png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      href="./faviconSimple192.png"
+      type="image/png"
+      sizes="192x192"
+    />
+    <meta property="og:title" content="2048 by Gabriele Cirulli" />
+    <meta
+      property="og:description"
+      content="Join the tiles and reach 2048! Play the free online game loved by millions."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./ogImage.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="2048" />
+    <meta name="pinterest-rich-pin" content="true" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="2048 by Gabriele Cirulli" />
+    <meta
+      name="twitter:description"
+      content="Join the tiles and reach 2048! Play the free online game loved by millions."
+    />
+    <meta name="twitter:image" content="./twitterImage.jpg" />
+    <meta name="twitter:creator" content="@gabrielecirulli" />
+    <script
+      type="module"
+      src="./assets/index-DcKNrhP6.js"
+    ></script>
+    <link rel="stylesheet" href="./assets/index-C2LZFHx5.css" />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="./sitemap.xml"
+    />
+    <link rel="modulepreload" href="./assets/browserAll-C69SllWQ.js" />
+    <link
+      rel="modulepreload"
+      href="./assets/DocumentLayoutHeading-BE2Apw-O.js"
+    />
+    <link rel="modulepreload" href="./assets/index-DYhCDuaK.js" />
+    <link rel="modulepreload" href="./assets/index-N5hjwRpN.js" />
+    <link rel="modulepreload" href="./assets/MessageBroker-CFZY8_fm.js" />
+    <link rel="modulepreload" href="./assets/pixi.js-Ddb3IYuz.js" />
+    <link rel="modulepreload" href="./assets/webworkerAll-u2st2l0J.js" />
+    <link rel="modulepreload" href="./assets/worker-Dh7dKkMY.js" />
+  </head>
+  <body data-platform="desktop">
+    <noscript
+      ><div
+        id="noscript-alert"
+        class="mx-auto mt-8 w-screen max-w-screen-lg rounded-lg bg-sand p-4 shadow-lg"
+      >
+        <p class="text-center text-lg font-bold">
+          Enable JavaScript to play 2048!
+        </p>
+        <p class="mt-4 text-center">
+          2048 requires JavaScript to be enabled in your browser.
+          <a
+            class="underline"
+            href="https://support.google.com/admanager/answer/12654"
+            >Learn how to enable it.</a
+          ><br />Think you’re seeing this by mistake?
+          <a class="underline" href="mailto:feedback@play2048.co"
+            >Please let us know.</a
+          >
+        </p>
+      </div></noscript
+    >
+    <div id="app">
+      <div class="mx-auto w-screen max-w-screen-md px-4 py-6 sm:px-8">
+        <div
+          class="mb-6 grid h-14 grid-cols-[1fr_min-content_1fr] items-center"
+        >
+          <div><a href="/index.html" class="hover:underline">← Back</a></div>
+          <h1
+            class="mr-auto flex items-center justify-center text-5xl font-bold"
+          >
+            <a href="/index.html">2048</a>
+          </h1>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="document-content mt-4 svelte-g8pikl">
+            <h2>Privacy Policy</h2>
+            <p><strong>Last updated December 12, 2025</strong></p>
+            <h3 id="introduction">Introduction</h3>
+            <p>
+              This Privacy Policy explains how
+              <strong>2048 USA B.V.</strong> collects, uses, and protects your
+              information when you visit
+              <a href="https://play2048.co"><strong>play2048.co</strong></a
+              >.
+            </p>
+            <p>
+              We are transparent about your privacy. This policy has two main
+              parts:
+            </p>
+            <ul>
+              <li>
+                <p>
+                  <a href="#part1"
+                    ><strong>Part 1: play2048.co’s Services</strong></a
+                  >
+                  - What we do with your data
+                </p>
+              </li>
+              <li>
+                <p>
+                  <a href="#part2"
+                    ><strong>Part 2: Mediavine Advertising</strong></a
+                  >
+                  - How our ad partner works
+                </p>
+              </li>
+            </ul>
+            <p>
+              <strong>Questions?</strong> Contact us anytime at
+              <a
+                href="/cdn-cgi/l/email-protection#bacac8d3ccdbd9c3facad6dbc3888a8e8294d9d5"
+                ><strong
+                  ><span
+                    class="__cf_email__"
+                    data-cfemail="d6a6a4bfa0b7b5af96a6bab7afe4e6e2eef8b5b9"
+                    >[email&#160;protected]</span
+                  ></strong
+                ></a
+              >.
+            </p>
+            <h3 id="glance">Privacy at a Glance</h3>
+            <p><strong>What we do:</strong></p>
+            <ul>
+              <li><p>We save your game progress (in your browser only).</p></li>
+              <li>
+                <p>
+                  We use analytics to understand how you use the game (only with
+                  your permission).
+                </p>
+              </li>
+              <li>
+                <p>Ads are managed by Mediavine (you can opt-out anytime).</p>
+              </li>
+            </ul>
+            <p><strong>What we do NOT do:</strong></p>
+            <ul>
+              <li><p>We do NOT sell your personal data.</p></li>
+              <li><p>We do NOT require logins or accounts.</p></li>
+              <li><p>We do NOT track you across other websites.</p></li>
+              <li>
+                <p>
+                  We do NOT knowingly collect data from children under 13 (or 16
+                  in the EU).
+                </p>
+              </li>
+              <li><p>We do NOT use hidden tracking or spyware.</p></li>
+            </ul>
+            <h3 id="part1">Part 1: play2048.co’s Services</h3>
+            <h4 id="collect">1. What Information Do We Collect?</h4>
+            <h5 id="info-you-give">Information You Give Us (Optional)</h5>
+            <p>
+              When you <strong>give feedback</strong> or
+              <strong>report a bug</strong>, you can optionally include your
+              email address and some browser information (browser type,
+              operating system). We use this information
+              <strong>only</strong> to respond to you and to help reproduce
+              technical issues—never for marketing or sharing with third
+              parties.
+            </p>
+            <p>
+              We also occasionally <strong>publish surveys</strong> where you
+              can provide feedback on the game. These are entirely optional, and
+              you may choose to include your email address. If provided, we will
+              only use it to ask follow-up questions or to notify you about game
+              updates if you give us explicit permission to do so.
+            </p>
+            <h5 id="info-auto">Information We Collect Automatically</h5>
+            <p>
+              When you visit play2048.co, we automatically collect certain
+              technical information to ensure the game works correctly:
+            </p>
+            <ul>
+              <li>
+                <p>
+                  <strong>Browser &amp; Device Info.</strong> Browser type,
+                  operating system, and device model to optimize the game
+                  layout.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Local Storage &amp; Cookies.</strong> We use Local
+                  Storage to save your game progress, highscores, language
+                  preference, and game settings locally on your device. This
+                  allows you to continue playing where you left off. We may also
+                  use Local Storage to keep track of whether you are a new or
+                  returning user.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Access Logs &amp; IP Address.</strong> We may log your
+                  IP address and access times for security purposes, to prevent
+                  abuse. We may use your IP Address to estimate what country
+                  your visit is from.
+                </p>
+              </li>
+            </ul>
+            <p>
+              <strong>Note on Privacy.</strong> We do not combine this technical
+              data with your name, email, or address. While IP addresses can be
+              considered personal data under some laws, we use them solely for
+              technical operations and ad delivery, not to build a personal
+              profile of you without your consent.
+            </p>
+            <h5 id="info-not">What We Do Not Collect</h5>
+            <ul>
+              <li><p>User accounts or logins.</p></li>
+              <li><p>Email addresses (except optional feedback).</p></li>
+              <li><p>Marketing lists or newsletters.</p></li>
+              <li><p>Retargeting or remarketing data.</p></li>
+              <li><p>Social media tracking.</p></li>
+              <li>
+                <p>
+                  Information from children under 16 in the EU or under 13 in
+                  the United States without parental consent.
+                </p>
+              </li>
+              <li><p>Payment or credit card information.</p></li>
+            </ul>
+            <h4 id="why">2. Why Do We Collect This Information?</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>What We Collect</th>
+                  <th>Why We Use It</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Game progress &amp; settings</td>
+                  <td>Save your game so you don’t lose progress</td>
+                </tr>
+                <tr>
+                  <td>Browser &amp; device info</td>
+                  <td>Make the site work better and faster for you</td>
+                </tr>
+                <tr>
+                  <td>Analytics data</td>
+                  <td>
+                    Understand which features you like most, and analyze the
+                    performance of the page
+                  </td>
+                </tr>
+                <tr>
+                  <td>Ad data</td>
+                  <td>Show you relevant advertisements</td>
+                </tr>
+                <tr>
+                  <td>Feedback emails</td>
+                  <td>Fix bugs and improve the game</td>
+                </tr>
+                <tr>
+                  <td>Bug reporting</td>
+                  <td>Troubleshoot bugs and issues with the game</td>
+                </tr>
+              </tbody>
+            </table>
+            <h4 id="services">3. Services We Use &amp; Where Your Data Goes</h4>
+            <p>
+              We use these tools to make the game better. All of them are
+              optional—you control whether they can access your data via our
+              consent banner.
+              <a href="#privacy-settings-popup">Click here</a> to open Privacy
+              Settings and control your preferences.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Service</th>
+                  <th>What It Does</th>
+                  <th>Data Location</th>
+                  <th>Privacy Policy</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Google Analytics 4</strong></td>
+                  <td>Measures website traffic &amp; user behavior</td>
+                  <td>United States</td>
+                  <td>
+                    <a href="https://policies.google.com/privacy">google.com</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Sentry</strong></td>
+                  <td>Catches errors &amp; monitors performance</td>
+                  <td>United States</td>
+                  <td><a href="/__offline__/disabled-telemetry">sentry.io</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Mediavine</strong></td>
+                  <td>Display personalized ads</td>
+                  <td>United States</td>
+                  <td>
+                    <a href="https://www.mediavine.com/privacy-policy/"
+                      >mediavine.com</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>GrowthBook</strong></td>
+                  <td>A/B testing platform</td>
+                  <td>United States</td>
+                  <td>
+                    <a href="https://growthbook.io/privacy">growthbook.io</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Google Tag Manager</strong></td>
+                  <td>Manages and deploys tracking tags</td>
+                  <td>United States</td>
+                  <td>
+                    <a href="https://policies.google.com/privacy">google.com</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>rumdash.io</strong></td>
+                  <td>Measures whether pages load smoothly</td>
+                  <td>United States</td>
+                  <td>
+                    <a href="/__offline__/disabled-telemetry">rumdash.io</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              <strong>Important:</strong> These tools are NOT automatically
+              active. We only use them if you opt-in via the consent banner. No
+              consent = no tracking.
+            </p>
+            <h4 id="cookies">4. Cookies &amp; How to Control Them</h4>
+            <h5>What Are Cookies?</h5>
+            <p>
+              Cookies are small files stored on your device that help websites
+              remember you.
+            </p>
+            <h5>Types of Cookies or Local Storage We Use</h5>
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Purpose</th>
+                  <th>Where is it stored?</th>
+                  <th>Duration</th>
+                  <th>Consent Required?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Strictly Necessary</strong></td>
+                  <td>Save your game progress &amp; settings</td>
+                  <td>Local Storage</td>
+                  <td>Until you clear them</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td><strong>Analytics</strong></td>
+                  <td>Measure how you use the site</td>
+                  <td>Cookies</td>
+                  <td>1 to 14 months</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td><strong>Performance Monitoring</strong></td>
+                  <td>Check if the site feels fast</td>
+                  <td>Local Storage</td>
+                  <td>Until you clear it</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td><strong>Advertising</strong></td>
+                  <td>Show you better ads</td>
+                  <td>Cookies</td>
+                  <td>Up to 13 months (see Mediavine’s policy)</td>
+                  <td>Yes</td>
+                </tr>
+              </tbody>
+            </table>
+            <h5>How to Manage Cookies</h5>
+            <h5>Option 1: Use Our Consent Banner (Easiest)</h5>
+            <p>
+              The consent banner displays automatically for visitors in the EU,
+              UK, and California.
+            </p>
+            <ul>
+              <li>
+                <p>
+                  See a banner when you first visit? That’s our consent tool.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Or click <strong>Privacy Settings</strong> in the footer
+                  anytime to change preferences.
+                </p>
+              </li>
+            </ul>
+            <p>
+              Visitors from other regions may not see a consent request, as
+              local laws may not require it.
+            </p>
+            <h5>Option 2: Browser Settings</h5>
+            <p>
+              You can always delete existing cookies and local storage, or fully
+              block cookies via your browser’s privacy settings.
+            </p>
+            <p>
+              <strong>Warning:</strong> Blocking all cookies may prevent the
+              game from saving your progress.
+            </p>
+            <h5>Option 3: Industry Opt-Out (For Ads Only)</h5>
+            <ul>
+              <li>
+                <p>
+                  <a
+                    href="https://optout.networkadvertising.org/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >NAI Opt-Out</a
+                  >
+                </p>
+              </li>
+              <li>
+                <p>
+                  <a
+                    href="https://optout.aboutads.info/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >DAA Opt-Out</a
+                  >
+                </p>
+              </li>
+              <li>
+                <p>
+                  <a
+                    href="https://youradchoices.com/appchoices"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Your Ad Choices (Mobile)</a
+                  >
+                </p>
+              </li>
+            </ul>
+            <h5>What Happens If You Reject Cookies?</h5>
+            <ul>
+              <li>
+                <p>
+                  <strong>You’ll still see ads</strong> - but they won’t be
+                  personalized.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>We won’t track you</strong> - no analytics data
+                  collected.
+                </p>
+              </li>
+            </ul>
+            <h4 id="retention">5. How Long Do We Keep Your Data?</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Data Type</th>
+                  <th>How Long We Keep It</th>
+                  <th>Why</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Game progress</td>
+                  <td>Until you clear your browser</td>
+                  <td>So you don’t lose your game</td>
+                </tr>
+                <tr>
+                  <td>Feedback emails</td>
+                  <td>
+                    Until no longer relevant for product improvement, reviewed
+                    annually
+                  </td>
+                  <td>
+                    To help with support and to inform future game improvements
+                  </td>
+                </tr>
+                <tr>
+                  <td>Analytics data</td>
+                  <td>14 months</td>
+                  <td>Google Analytics default</td>
+                </tr>
+                <tr>
+                  <td>Error logs</td>
+                  <td>90 days</td>
+                  <td>To fix technical problems</td>
+                </tr>
+                <tr>
+                  <td>Server logs</td>
+                  <td>24 hours</td>
+                  <td>For security</td>
+                </tr>
+                <tr>
+                  <td>Mediavine ad data</td>
+                  <td>Varies</td>
+                  <td>See Mediavine’s policy</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              <strong
+                >After these periods, all data is automatically deleted or
+                anonymized.</strong
+              >
+            </p>
+            <h4 id="legal-basis">6. Legal Basis for Collecting Your Data</h4>
+            <p>
+              <strong>We collect data for these specific legal reasons:</strong>
+            </p>
+            <ul>
+              <li>
+                <p>
+                  <strong>Game Progress</strong> - essential for the game to
+                  work.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Analytics</strong> - you give us permission via the
+                  consent banner.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Ads</strong> - you give us permission via the consent
+                  banner.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Security</strong> - we need it to keep the site safe
+                  from attacks.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Feedback Responses</strong> - we need it to answer
+                  your questions.
+                </p>
+              </li>
+            </ul>
+            <h4 id="security">7. Data Security</h4>
+            <p>We protect your data with:</p>
+            <ul>
+              <li>
+                <p>
+                  <strong>HTTPS encryption</strong> - data is encrypted when
+                  sent.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Limited access</strong> - only essential staff can see
+                  data.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>No sensitive data storage</strong> - we don’t store
+                  payment or personal info.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Regular security reviews</strong> - we check for
+                  vulnerabilities.
+                </p>
+              </li>
+            </ul>
+            <h4 id="automation">8. Automated Decision-Making</h4>
+            <p>
+              <strong
+                >play2048.co only uses automated decision-making for A/B
+                testing.</strong
+              >
+              Mediavine may use automation to serve ads, but this does NOT
+              affect your access to the game.
+            </p>
+            <h4 id="rights">9. Your Privacy Rights</h4>
+            <h5>If You’re in the EU (GDPR)</h5>
+            <p>You have the right to:</p>
+            <ul>
+              <li>
+                <p>
+                  <strong>Access</strong> - see what data we have about you.
+                </p>
+              </li>
+              <li>
+                <p><strong>Correct</strong> - fix any wrong information.</p>
+              </li>
+              <li>
+                <p>
+                  <strong>Delete</strong> - ask us to remove your data (“Right
+                  to Be Forgotten”).
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Export</strong> - get your data in a readable format.
+                </p>
+              </li>
+              <li>
+                <p><strong>Object</strong> - say no to certain processing.</p>
+              </li>
+              <li>
+                <p>
+                  <strong>Withdraw Consent</strong> - stop any service anytime.
+                </p>
+              </li>
+            </ul>
+            <h5>If You’re in California (CCPA)</h5>
+            <p>You have the right to:</p>
+            <ul>
+              <li>
+                <p><strong>Know</strong> - what personal info we collect.</p>
+              </li>
+              <li>
+                <p><strong>Delete</strong> - request we erase your data.</p>
+              </li>
+              <li>
+                <p>
+                  <strong>Opt-Out of Sales</strong> - say “Do Not Sell or Share
+                  My Personal Information.” We share data with Mediavine for
+                  personalized advertising (see
+                  <a href="#part2">Part 2: Mediavine Advertising</a> for
+                  details). Under California law, this may constitute both
+                  “selling” and “sharing” of personal information.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>No Discrimination</strong> - we won’t penalize you for
+                  exercising rights.
+                </p>
+              </li>
+            </ul>
+            <h5>How to Exercise Your Rights</h5>
+            <p>
+              Email
+              <a
+                href="/cdn-cgi/l/email-protection#3747455e4156544e77475b564e0507030f195458"
+                ><strong
+                  ><span
+                    class="__cf_email__"
+                    data-cfemail="3545475c4354564c754559544c0705010d1b565a"
+                    >[email&#160;protected]</span
+                  ></strong
+                ></a
+              >
+              with your request. We’ll respond within 30 days.
+            </p>
+            <h4 id="transfers">10. International Data Transfers</h4>
+            <p>
+              Our servers are in the <strong>United States</strong>. If you’re
+              in the EU, your data may be transferred to the US for processing.
+              We use <strong>Standard Contractual Clauses</strong> to protect
+              your data. For details, contact
+              <a
+                href="/cdn-cgi/l/email-protection#a8d8dac1dec9cbd1e8d8c4c9d19a989c9086cbc7"
+                ><strong
+                  ><span
+                    class="__cf_email__"
+                    data-cfemail="f383819a8592908ab3839f928ac1c3c7cbdd909c"
+                    >[email&#160;protected]</span
+                  ></strong
+                ></a
+              >.
+            </p>
+            <h4 id="children">11. Children’s Privacy</h4>
+            <p>
+              <strong>play2048.co is accessible to all ages.</strong>
+              <strong
+                >We do not knowingly collect personal information from children
+                under 16 in the EU or under 13 in the United States without
+                parental consent.</strong
+              >
+            </p>
+            <p>
+              If you’re a parent and believe we collected data from your child:
+            </p>
+            <ol>
+              <li><p>Stop using the site.</p></li>
+              <li>
+                <p>
+                  Email
+                  <a
+                    href="/cdn-cgi/l/email-protection#c1b1b3a8b7a0a2b881b1ada0b8f3f1f5f9efa2ae"
+                    ><strong
+                      ><span
+                        class="__cf_email__"
+                        data-cfemail="1363617a6572706a53637f726a2123272b3d707c"
+                        >[email&#160;protected]</span
+                      ></strong
+                    ></a
+                  >
+                  immediately.
+                </p>
+              </li>
+              <li><p>We’ll delete the data right away.</p></li>
+            </ol>
+            <p>
+              The game is appropriate for all ages, but parents should supervise
+              younger children’s internet use.
+            </p>
+            <h4 id="breach">12. Data Breach Notification</h4>
+            <p>If a data breach affects you, we will:</p>
+            <ul>
+              <li>
+                <p>Notify authorities within 72 hours (GDPR requirement).</p>
+              </li>
+              <li><p>Inform you directly if there’s high risk.</p></li>
+              <li><p>Take immediate action to stop the breach.</p></li>
+              <li><p>Document everything we did to fix it.</p></li>
+            </ul>
+            <p>
+              Suspect unauthorized access? Contact
+              <a
+                href="/cdn-cgi/l/email-protection#cdbdbfa4bbacaeb48dbda1acb4fffdf9f5e3aea2"
+                ><strong
+                  ><span
+                    class="__cf_email__"
+                    data-cfemail="1f6f6d76697e7c665f6f737e662d2f2b27317c70"
+                    >[email&#160;protected]</span
+                  ></strong
+                ></a
+              >
+              immediately.
+            </p>
+            <h4 id="updates">13. Updates to This Policy</h4>
+            <p>
+              We may update this policy for new tools, laws, or practices.
+              Changes appear here with an updated “Last Updated” date.
+            </p>
+            <p>
+              <strong
+                >Continuing to use the site means you accept any
+                updates.</strong
+              >
+            </p>
+            <h4 id="contact">14. Contact Us</h4>
+            <p><strong>Data Protection Officer (DPO)</strong></p>
+            <p><strong>Name:</strong> Gabriele Cirulli</p>
+            <p>
+              <strong>Email:</strong>
+              <a
+                href="/cdn-cgi/l/email-protection#d3a3a1baa5b2b0aa93a3bfb2aae1e3e7ebfdb0bc"
+                ><strong
+                  ><span
+                    class="__cf_email__"
+                    data-cfemail="6d1d1f041b0c0e142d1d010c145f5d5955430e02"
+                    >[email&#160;protected]</span
+                  ></strong
+                ></a
+              >
+            </p>
+            <p><strong>Company:</strong> 2048 USA B.V.</p>
+            <p><strong>Chamber of Commerce:</strong> 89773977</p>
+            <p><strong>VAT Number:</strong> NL865103525B01</p>
+            <p>Any privacy questions or concerns? Contact the DPO directly.</p>
+            <h3 id="part2">Part 2: Mediavine Advertising</h3>
+            <h4 id="mediavine-placeholder">
+              Mediavine Programmatic Advertising (Ver 1.1)
+            </h4>
+            <p>
+              The Website works with Mediavine to manage third-party
+              interest-based advertising appearing on the Website. Mediavine
+              serves content and advertisements when you visit the Website,
+              which may use first and third-party cookies. A cookie is a small
+              text file which is sent to your computer or mobile device
+              (referred to in this policy as a "device") by the web server so
+              that a website can remember some information about your browsing
+              activity on the Website.
+            </p>
+            <p>
+              First party cookies are created by the website that you are
+              visiting. A third-party cookie is frequently used in behavioral
+              advertising and analytics and is created by a domain other than
+              the website you are visiting. Third-party cookies, tags, pixels,
+              beacons and other similar technologies (collectively, "Tags") may
+              be placed on the Website to monitor interaction with advertising
+              content and to target and optimize advertising. Each internet
+              browser has functionality so that you can block both first and
+              third-party cookies and clear your browser’s cache. The "help"
+              feature of the menu bar on most browsers will tell you how to stop
+              accepting new cookies, how to receive notification of new cookies,
+              how to disable existing cookies and how to clear your browser’s
+              cache. For more information about cookies and how to disable them,
+              you can consult the information at
+              <a
+                href="https://www.allaboutcookies.org/manage-cookies/"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                >All About Cookies</a
+              >.
+            </p>
+            <p>
+              Without cookies you may not be able to take full advantage of the
+              Website content and features. Please note that rejecting cookies
+              does not mean that you will no longer see ads when you visit our
+              Site. In the event you opt-out, you will still see
+              non-personalized advertisements on the Website.
+            </p>
+            <p>
+              The Website collects the following data using a cookie when
+              serving personalized ads:
+            </p>
+            <ul>
+              <li>IP Address</li>
+              <li>Operating System type</li>
+              <li>Operating System version</li>
+              <li>Device Type</li>
+              <li>Language of the website</li>
+              <li>Web browser type</li>
+              <li>Email (in hashed form)</li>
+            </ul>
+            <p>
+              Mediavine Partners (companies listed below with whom Mediavine
+              shares data) may also use this data to link to other end user
+              information the partner has independently collected to deliver
+              targeted advertisements. Mediavine Partners may also separately
+              collect data about end users from other sources, such as
+              advertising IDs or pixels, and link that data to data collected
+              from Mediavine publishers in order to provide interest-based
+              advertising across your online experience, including devices,
+              browsers and apps. This data includes usage data, cookie
+              information, device information, information about interactions
+              between users and advertisements and websites, geolocation data,
+              traffic data, and information about a visitor’s referral source to
+              a particular website. Mediavine Partners may also create unique
+              IDs to create audience segments, which are used to provide
+              targeted advertising.
+            </p>
+            <p>
+              If you would like more information about this practice and to know
+              your choices to opt-in or opt-out of this data collection, please
+              visit
+              <a
+                href="https://thenai.org/opt-out/"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                >National Advertising Initiative opt out page</a
+              >. You may also visit
+              <a
+                href="http://optout.aboutads.info/#/"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                >Digital Advertising Alliance website</a
+              >
+              and
+              <a
+                href="http://optout.networkadvertising.org/#"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                >Network Advertising Initiative website</a
+              >
+              to learn more information about interest-based advertising. You
+              may download the AppChoices app at
+              <a
+                href="https://youradchoices.com/appchoices"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                >Digital Advertising Alliance’s AppChoices app</a
+              >
+              to opt out in connection with mobile apps, or use the platform
+              controls on your mobile device to opt out.
+            </p>
+            <p>
+              For specific information about Mediavine Partners, the data each
+              collects and their data collection and privacy policies, please
+              visit
+              <a
+                href="https://www.mediavine.com/ad-partners/"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                >Mediavine Partners</a
+              >.
+            </p>
+            <h4 id="california-optout">
+              California Residents: Right to Opt-Out
+            </h4>
+            <p>
+              <strong
+                >Under California law (CCPA), sharing your data with Mediavine
+                for ads may count as “selling” your personal
+                information.</strong
+              >
+            </p>
+            <p>
+              You have the right to say
+              <strong>“Do Not Sell or Share My Personal Information.”</strong>
+            </p>
+            <p>
+              <strong>Click Here to Opt-Out:</strong>
+              <a href="https://play2048.co/?showConsentTool=true"
+                >Open Privacy Settings</a
+              >
+            </p>
+            <p>
+              You can also use the “<strong>Privacy Settings</strong>” link in
+              the footer or contact us at
+              <a
+                href="/cdn-cgi/l/email-protection#96e6e4ffe0f7f5efd6e6faf7efa4a6a2aeb8f5f9"
+                ><strong
+                  ><span
+                    class="__cf_email__"
+                    data-cfemail="6515170c1304061c251509041c5755515d4b060a"
+                    >[email&#160;protected]</span
+                  ></strong
+                ></a
+              >.
+            </p>
+            <h4 id="quick-reference">Quick Reference: Your Data</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Question</th>
+                  <th>play2048.co</th>
+                  <th>Mediavine Ads</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>What data?</td>
+                  <td>Game progress, browser info, optional email</td>
+                  <td>IP, device, browser, hashed email</td>
+                </tr>
+                <tr>
+                  <td>Why?</td>
+                  <td>Game function, analytics, support</td>
+                  <td>Personalized ads &amp; measurement</td>
+                </tr>
+                <tr>
+                  <td>Need consent?</td>
+                  <td>For analytics only</td>
+                  <td>Yes (via consent banner)</td>
+                </tr>
+                <tr>
+                  <td>Shared with others?</td>
+                  <td>No</td>
+                  <td>Yes, with ad partners</td>
+                </tr>
+                <tr>
+                  <td>Cookies?</td>
+                  <td>Yes (game only)</td>
+                  <td>Yes (ads)</td>
+                </tr>
+                <tr>
+                  <td>How long?</td>
+                  <td>Temporary</td>
+                  <td>Varies</td>
+                </tr>
+                <tr>
+                  <td>Control it?</td>
+                  <td>Browser settings, consent tool</td>
+                  <td>Consent banner, NAI/DAA</td>
+                </tr>
+                <tr>
+                  <td>Questions?</td>
+                  <td>
+                    <p>
+                      <a
+                        href="/cdn-cgi/l/email-protection#3545475c4354564c754559544c0705010d1b565a"
+                        ><strong
+                          ><span
+                            class="__cf_email__"
+                            data-cfemail="c4b4b6adb2a5a7bd84b4a8a5bdf6f4f0fceaa7ab"
+                            >[email&#160;protected]</span
+                          ></strong
+                        ></a
+                      >
+                    </p>
+                  </td>
+                  <td>
+                    <p>
+                      <a
+                        href="/cdn-cgi/l/email-protection#05757067696c766d607776456860616c64736c6b602b666a68"
+                        ><strong
+                          ><span
+                            class="__cf_email__"
+                            data-cfemail="a4d4d1c6c8cdd7ccc1d6d7e4c9c1c0cdc5d2cdcac18ac7cbc9"
+                            >[email&#160;protected]</span
+                          ></strong
+                        ></a
+                      >
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <h4 id="need-help">Need Help?</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Question About...</th>
+                  <th>Contact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>play2048.co privacy or data</td>
+                  <td>
+                    <p>
+                      <a
+                        href="/cdn-cgi/l/email-protection#81f1f3e8f7e0e2f8c1f1ede0f8b3b1b5b9afe2ee"
+                        ><strong
+                          ><span
+                            class="__cf_email__"
+                            data-cfemail="0373716a7562607a43736f627a3133373b2d606c"
+                            >[email&#160;protected]</span
+                          ></strong
+                        ></a
+                      >
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Feedback or bug reports</td>
+                  <td>Use the in-game feedback form (email optional)</td>
+                </tr>
+                <tr>
+                  <td>Advertising or Mediavine</td>
+                  <td>
+                    <p>
+                      <a
+                        href="/cdn-cgi/l/email-protection#dbabaeb9b7b2a8b3bea9a89bb6bebfb2baadb2b5bef5b8b4b6"
+                        ><strong
+                          ><span
+                            class="__cf_email__"
+                            data-cfemail="18686d7a74716b707d6a6b58757d7c71796e71767d367b7775"
+                            >[email&#160;protected]</span
+                          ></strong
+                        ></a
+                      >
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>This Privacy Policy was last updated on December 12, 2025.</p>
+            <p>© 2025 2048 USA B.V. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a
+      tabindex="-1"
+      aria-hidden="true"
+      inert=""
+      href="/privacy-policy"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        font-size: 1px;
+        line-height: 1px;
+        color: transparent;
+        transform: translateY(-100vh);
+        white-space: nowrap;
+        pointer-events: none;
+        user-select: none;
+      "
+      >Privacy Policy</a
+    >
+  </body>
+</html>
