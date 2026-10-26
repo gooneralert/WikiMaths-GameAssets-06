@@ -1,0 +1,74 @@
+{
+  "disclosures": [
+    {
+      "identifier": "tluid",
+      "type": "cookie",
+      "maxAgeSeconds": 7776000,
+      "cookieRefresh": true,
+      "domain": "*.3lift.com",
+      "purposes": [1, 2, 7, 9, 10]
+    },
+    {
+      "identifier": "tluidp",
+      "type": "cookie",
+      "maxAgeSeconds": 7776000,
+      "cookieRefresh": true,
+      "domain": "*.3lift.com",
+      "purposes": [1, 2, 7, 9, 10]
+    },
+    {
+      "identifier": "sync",
+      "type": "cookie",
+      "maxAgeSeconds": 2592000,
+      "cookieRefresh": true,
+      "domain": "*.3lift.com",
+      "purposes": [1, 2, 7, 9, 10]
+    },
+    {
+      "identifier": "sync1",
+      "type": "cookie",
+      "maxAgeSeconds": 2592000,
+      "cookieRefresh": true,
+      "domain": "*.3lift.com",
+      "purposes": [1, 2, 7, 9, 10]
+    },
+    {
+      "identifier": "sync2",
+      "type": "cookie",
+      "maxAgeSeconds": 2592000,
+      "cookieRefresh": true,
+      "domain": "*.3lift.com",
+      "purposes": [1, 2, 7, 9, 10]
+    },
+    {
+      "identifier": "sync3",
+      "type": "cookie",
+      "maxAgeSeconds": 2592000,
+      "cookieRefresh": true,
+      "domain": "*.3lift.com",
+      "purposes": [1, 2, 7, 9, 10]
+    },
+    {
+      "identifier": "sync4",
+      "type": "cookie",
+      "maxAgeSeconds": 2592000,
+      "cookieRefresh": true,
+      "domain": "*.3lift.com",
+      "purposes": [1, 2, 7, 9, 10]
+    },
+    {
+      "identifier": "receive-cookie-deprecation",
+      "type": "cookie",
+      "maxAgeSeconds": 7776000,
+      "cookieRefresh": true,
+      "domain": "*.3lift.com",
+      "purposes": [1, 2, 7, 9, 10]
+    }
+  ],
+  "domains": [
+    {
+      "domain": "*.3lift.com"
+    }
+  ],
+  "sdks": []
+}

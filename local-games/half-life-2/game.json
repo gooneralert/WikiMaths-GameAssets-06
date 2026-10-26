@@ -1,0 +1,255 @@
+{
+  "slug": "half-life-2",
+  "title": "Half-Life 2",
+  "type": "HTML",
+  "developer": "Valve",
+  "description": "Reawakened from stasis in the occupied metropolis of City 17, Gordon Freeman is joined by Alyx Vance as he leads a desperate human resistance. Experience the landmark first-person shooter packed with immersive world-building, boundary-pushing physics, and exhilarating combat.",
+  "tags": [
+    "FPS",
+    "Action-Adventure",
+    "Atmospheric",
+    "Shooter",
+    "Sci-Fi"
+  ],
+  "controls": [
+    {
+      "action": "Forward",
+      "keys": [
+        {
+          "key": "KeyW",
+          "keyCode": 87
+        }
+      ]
+    },
+    {
+      "action": "Backward",
+      "keys": [
+        {
+          "key": "KeyS",
+          "keyCode": 83
+        }
+      ]
+    },
+    {
+      "action": "Right",
+      "keys": [
+        {
+          "key": "KeyD",
+          "keyCode": 68
+        }
+      ]
+    },
+    {
+      "action": "Left",
+      "keys": [
+        {
+          "key": "KeyA",
+          "keyCode": 65
+        }
+      ]
+    },
+    {
+      "action": "Jump",
+      "keys": [
+        {
+          "key": "Space",
+          "keyCode": 32
+        }
+      ]
+    },
+    {
+      "action": "Crouch",
+      "keys": [
+        {
+          "key": "ControlLeft",
+          "keyCode": 17
+        }
+      ]
+    },
+    {
+      "action": "Use/Interact",
+      "keys": [
+        {
+          "key": "KeyE",
+          "keyCode": 69
+        }
+      ]
+    },
+    {
+      "action": "Reload",
+      "keys": [
+        {
+          "key": "KeyR",
+          "keyCode": 82
+        }
+      ]
+    },
+    {
+      "action": "Flashlight",
+      "keys": [
+        {
+          "key": "KeyF",
+          "keyCode": 70
+        }
+      ]
+    },
+    {
+      "action": "Quick Switch Weapon",
+      "keys": [
+        {
+          "key": "KeyQ",
+          "keyCode": 81
+        }
+      ]
+    },
+    {
+      "action": "Pause",
+      "keys": [
+        {
+          "key": "Escape",
+          "keyCode": 27
+        }
+      ]
+    }
+  ],
+  "gamepadControls": [
+    {
+      "action": "Forward",
+      "axes": [
+        {
+          "index": 1,
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "action": "Backward",
+      "axes": [
+        {
+          "index": 1,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "action": "Right",
+      "axes": [
+        {
+          "index": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "action": "Left",
+      "axes": [
+        {
+          "index": 0,
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "action": "Jump",
+      "buttons": [
+        0
+      ]
+    },
+    {
+      "action": "Crouch",
+      "buttons": [
+        1
+      ]
+    },
+    {
+      "action": "Use/Interact",
+      "buttons": [
+        2
+      ]
+    },
+    {
+      "action": "Reload",
+      "buttons": [
+        2
+      ]
+    },
+    {
+      "action": "Flashlight",
+      "buttons": [
+        12
+      ]
+    },
+    {
+      "action": "Pause",
+      "buttons": [
+        9
+      ]
+    }
+  ],
+  "controllerSupport": false,
+  "sourceId": "289da80d-e78e-4e3d-b67c-d612cb84a13b",
+  "sourceVersion": "1",
+  "sourceUrl": "https://playobsidian.com/cdn/assets/html/289da80d-e78e-4e3d-b67c-d612cb84a13b/1/index.html",
+  "baseUrl": "https://playobsidian.com/cdn/assets/html/289da80d-e78e-4e3d-b67c-d612cb84a13b/1/",
+  "entry": "/index.html",
+  "entryUrl": "https://playobsidian.com/cdn/assets/html/289da80d-e78e-4e3d-b67c-d612cb84a13b/1/index.html",
+  "status": "done",
+  "sizeBytes": 297096276,
+  "assetCount": 86,
+  "known404": [
+    "https://playobsidian.com/cdn/assets/html/289da80d-e78e-4e3d-b67c-d612cb84a13b/1/GOT.mem",
+    "https://playobsidian.com/cdn/assets/html/289da80d-e78e-4e3d-b67c-d612cb84a13b/1/.ogg",
+    "https://playobsidian.com/cdn/assets/html/289da80d-e78e-4e3d-b67c-d612cb84a13b/1/.wav",
+    "https://playobsidian.com/cdn/assets/html/289da80d-e78e-4e3d-b67c-d612cb84a13b/1/.mp3",
+    "https://playobsidian.com/idbfs/gamestate.txt",
+    "https://playobsidian.com/hl2/gamestate.txt"
+  ],
+  "failed": [
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/289da80d-e78e-4e3d-b67c-d612cb84a13b/1/GOT.mem",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/289da80d-e78e-4e3d-b67c-d612cb84a13b/1/GOT.mem",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/289da80d-e78e-4e3d-b67c-d612cb84a13b/1/.ogg",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/289da80d-e78e-4e3d-b67c-d612cb84a13b/1/.ogg",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/289da80d-e78e-4e3d-b67c-d612cb84a13b/1/.wav",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/289da80d-e78e-4e3d-b67c-d612cb84a13b/1/.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/289da80d-e78e-4e3d-b67c-d612cb84a13b/1/.mp3",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/289da80d-e78e-4e3d-b67c-d612cb84a13b/1/.mp3",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/idbfs/gamestate.txt",
+      "error": "HTTP 404 for https://playobsidian.com/idbfs/gamestate.txt",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/hl2/gamestate.txt",
+      "error": "HTTP 404 for https://playobsidian.com/hl2/gamestate.txt",
+      "status": 404
+    }
+  ],
+  "mirroredAt": "2026-10-26T10:30:24.224Z",
+  "verifiedAt": "2026-10-26T10:31:25.445Z",
+  "verification": {
+    "external": 0,
+    "local404": 0,
+    "expected404": 0,
+    "failures": 0,
+    "title": "HALF-LIFE 2 - OpenGLES",
+    "crossOriginIsolated": true,
+    "sharedArrayBuffer": "function",
+    "canvas": {
+      "width": 800,
+      "height": 600
+    },
+    "nonBlack": "err:Failed to execute 'getContext' on 'HTMLCanvasElement': Cannot get context from a canvas that has transferred its control to offscreen."
+  }
+}

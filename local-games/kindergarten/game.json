@@ -1,0 +1,83 @@
+{
+  "slug": "kindergarten",
+  "title": "Kindergarten",
+  "type": "HTML",
+  "developer": "Con Man Games",
+  "description": "Welcome to Kindergarten! Have fun trying to learn and share...and not die. That's important too. In a school that's just not quite right, it's important to be friendly...and take out those that aren't.",
+  "tags": [
+    "2D",
+    "Comedy",
+    "Dark",
+    "Horror",
+    "Pixel Graphics",
+    "Puzzle"
+  ],
+  "controls": [],
+  "gamepadControls": [],
+  "controllerSupport": false,
+  "sourceId": "ed649cf3-1172-4d50-8fb1-26ac19cda728",
+  "sourceVersion": "2.04",
+  "sourceUrl": "https://playobsidian.com/cdn/assets/html/ed649cf3-1172-4d50-8fb1-26ac19cda728/2.04/index.html",
+  "baseUrl": "https://playobsidian.com/cdn/assets/html/ed649cf3-1172-4d50-8fb1-26ac19cda728/2.04/",
+  "entry": "/index.html",
+  "entryUrl": "https://playobsidian.com/cdn/assets/html/ed649cf3-1172-4d50-8fb1-26ac19cda728/2.04/index.html",
+  "status": "done",
+  "sizeBytes": 75019471,
+  "assetCount": 28,
+  "known404": [
+    "https://playobsidian.com/Build.loader.js",
+    "https://playobsidian.com/Build.data",
+    "https://playobsidian.com/Build.framework.js",
+    "https://playobsidian.com/cdn/assets/html/ed649cf3-1172-4d50-8fb1-26ac19cda728/2.04/Build/Build.wasm",
+    "https://playobsidian.com/cdn/assets/html/ed649cf3-1172-4d50-8fb1-26ac19cda728/2.04/Build/build.wasm",
+    "https://playobsidian.com/cdn/assets/html/ed649cf3-1172-4d50-8fb1-26ac19cda728/2.04/Build/build.temp.asm.js"
+  ],
+  "failed": [
+    {
+      "url": "https://playobsidian.com/Build.loader.js",
+      "error": "HTTP 404 for https://playobsidian.com/Build.loader.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/Build.data",
+      "error": "HTTP 404 for https://playobsidian.com/Build.data",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/Build.framework.js",
+      "error": "HTTP 404 for https://playobsidian.com/Build.framework.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/ed649cf3-1172-4d50-8fb1-26ac19cda728/2.04/Build/Build.wasm",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/ed649cf3-1172-4d50-8fb1-26ac19cda728/2.04/Build/Build.wasm",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/ed649cf3-1172-4d50-8fb1-26ac19cda728/2.04/Build/build.wasm",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/ed649cf3-1172-4d50-8fb1-26ac19cda728/2.04/Build/build.wasm",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/ed649cf3-1172-4d50-8fb1-26ac19cda728/2.04/Build/build.temp.asm.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/ed649cf3-1172-4d50-8fb1-26ac19cda728/2.04/Build/build.temp.asm.js",
+      "status": 404
+    }
+  ],
+  "mirroredAt": "2026-10-26T10:46:09.220Z",
+  "verifiedAt": "2026-10-26T10:46:21.214Z",
+  "verification": {
+    "external": 0,
+    "local404": 0,
+    "expected404": 0,
+    "failures": 0,
+    "title": "Kindergarten",
+    "crossOriginIsolated": true,
+    "sharedArrayBuffer": "function",
+    "canvas": {
+      "width": 1264,
+      "height": 625
+    },
+    "nonBlack": 0
+  }
+}

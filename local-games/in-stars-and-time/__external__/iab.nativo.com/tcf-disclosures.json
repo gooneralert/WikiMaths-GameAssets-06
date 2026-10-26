@@ -1,0 +1,68 @@
+{
+  "disclosures": [
+    {
+      "identifier": "status",
+      "type": "cookie",
+      "maxAgeSeconds": 31536000,
+      "cookieRefresh": true,
+      "domain": "*.postrelease.com", 
+      "purposes": [1]
+    },
+    {
+      "identifier": "ver",
+      "type": "cookie",
+      "maxAgeSeconds": 31536000,
+      "cookieRefresh": true,
+      "domain": "*.postrelease.com", 
+      "purposes": [1]
+    },
+    {
+      "identifier": "visitor",
+      "type": "cookie",
+      "maxAgeSeconds": 31536000,
+      "cookieRefresh": true,
+      "domain": "*.postrelease.com", 
+      "purposes": [1,2,3,4,7,9,10]
+    },
+    {
+      "identifier": "opt_out",
+      "type": "cookie",
+      "maxAgeSeconds": 31536000,
+      "cookieRefresh": true,
+      "domain": "*.postrelease.com", 
+      "purposes": [1,2,3,4]
+    },
+    {
+      "identifier": "gdpr_consent",
+      "type": "cookie",
+      "maxAgeSeconds": 31536000,
+      "cookieRefresh": true,
+      "domain": "*.postrelease.com", 
+      "purposes": [1,2,3,4]
+    },
+    {
+      "identifier": "ntv-session-*",
+      "type": "web",
+      "maxAgeSeconds": null,
+      "cookieRefresh": false,
+      "domain": "jadserve.postrelease.com", 
+      "purposes": [1]
+    }
+  ],
+  "domains": [
+    {
+      "domain": "*.postrelease.com",
+      "use": "Ad server and tracking"
+    }
+  ],
+  "sdks": [
+    {
+      "name": "net.nativo.sdk",
+      "use": "Advertising"
+    },
+    {
+      "name": "net.nativo.NativoSDK",
+      "use": "Advertising"
+    }
+  ]
+}

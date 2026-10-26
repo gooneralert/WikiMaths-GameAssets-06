@@ -1,0 +1,501 @@
+{
+  "disclosures": [
+    {
+      "identifier": "_mNExInsl",
+      "type": "cookie",
+      "maxAgeSeconds": 604800,
+      "cookieRefresh": true,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2
+      ]
+    },
+    {
+      "identifier": "_mNInsl",
+      "type": "cookie",
+      "maxAgeSeconds": 604800,
+      "cookieRefresh": true,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2
+      ]
+    },
+    {
+      "identifier": "_mNInsChk",
+      "type": "cookie",
+      "maxAgeSeconds": 0,
+      "cookieRefresh": false,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2
+      ]
+    },
+    {
+      "identifier": "_mNOvl",
+      "type": "cookie",
+      "maxAgeSeconds": 604800,
+      "cookieRefresh": true,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2
+      ]
+    },
+    {
+      "identifier": "_mNIntDock",
+      "type": "cookie",
+      "maxAgeSeconds": 604800,
+      "cookieRefresh": false,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2
+      ]
+    },
+    {
+      "identifier": "_mNOvlShown",
+      "type": "cookie",
+      "maxAgeSeconds": 604800,
+      "cookieRefresh": false,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2
+      ]
+    },
+    {
+      "identifier": "_mNIDShownPrev",
+      "type": "cookie",
+      "maxAgeSeconds": 604800,
+      "cookieRefresh": false,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2
+      ]
+    },
+    {
+      "identifier": "session_depth",
+      "type": "cookie",
+      "maxAgeSeconds": 1800,
+      "cookieRefresh": true,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2,
+        7
+      ]
+    },
+    {
+      "identifier": "mnet_ad_pref_close",
+      "type": "cookie",
+      "maxAgeSeconds": 1800,
+      "cookieRefresh": true,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2,
+        7
+      ]
+    },
+    {
+      "identifier": "mnet_optout",
+      "type": "cookie",
+      "maxAgeSeconds": 31536000,
+      "cookieRefresh": false,
+      "domains": [
+        "*.media.net"
+      ],
+      "purposes": [
+        1,
+        2,
+        7
+      ]
+    },
+    {
+      "identifier": "usprivacy",
+      "type": "cookie",
+      "maxAgeSeconds": 31560000,
+      "cookieRefresh": true,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2
+      ]
+    },
+    {
+      "identifier": "usp_status",
+      "type": "cookie",
+      "maxAgeSeconds": 15984000,
+      "cookieRefresh": false,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2,
+        7
+      ]
+    },
+    {
+      "identifier": "gdpr_oli",
+      "type": "cookie",
+      "maxAgeSeconds": 31556952,
+      "cookieRefresh": false,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2
+      ]
+    },
+    {
+      "identifier": "euconsent-v2",
+      "type": "cookie",
+      "maxAgeSeconds": 34190000,
+      "cookieRefresh": true,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2
+      ]
+    },
+    {
+      "identifier": "addtl_consent",
+      "type": "cookie",
+      "maxAgeSeconds": 34190000,
+      "cookieRefresh": true,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2
+      ]
+    },
+    {
+      "identifier": "client-id",
+      "type": "cookie",
+      "maxAgeSeconds": 31536000,
+      "cookieRefresh": false,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        4,
+        9,
+        10
+      ]
+    },
+    {
+      "identifier": "visitor-id",
+      "type": "cookie",
+      "maxAgeSeconds": 31536000,
+      "cookieRefresh": false,
+      "domains": [
+        "*.media.net"
+      ],
+      "purposes": [
+        1,
+        4
+      ]
+    },
+    {
+      "identifier": "data-*",
+      "type": "cookie",
+      "maxAgeSeconds": 31536000,
+      "cookieRefresh": false,
+      "domains": [
+        "*.media.net"
+      ],
+      "purposes": [
+        1,
+        4
+      ]
+    },
+    {
+      "identifier": "atst",
+      "type": "cookie",
+      "maxAgeSeconds": 604800,
+      "cookieRefresh": false,
+      "domains": [
+        "*.media.net"
+      ],
+      "purposes": [
+        1,
+        2,
+        7
+      ]
+    },
+    {
+      "identifier": "mnvid_ses_cap",
+      "type": "cookie",
+      "maxAgeSeconds": 0,
+      "cookieRefresh": false,
+      "domains": [
+        "*.media.net"
+      ],
+      "purposes": [
+        1,
+        2,
+        7
+      ]
+    },
+    {
+      "identifier": "mnvid_day_cap",
+      "type": "cookie",
+      "maxAgeSeconds": 86400,
+      "cookieRefresh": false,
+      "domains": [
+        "*.media.net"
+      ],
+      "purposes": [
+        1,
+        2,
+        7
+      ]
+    },
+    {
+      "identifier": "mnsbucketName",
+      "type": "web",
+      "maxAgeSeconds": null,
+      "cookieRefresh": false,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2,
+        7
+      ]
+    },
+    {
+      "identifier": "mnsbucketExpiryTime",
+      "type": "web",
+      "maxAgeSeconds": null,
+      "cookieRefresh": false,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2,
+        7
+      ]
+    },
+    {
+      "identifier": "mnstestVersion",
+      "type": "web",
+      "maxAgeSeconds": null,
+      "cookieRefresh": false,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2,
+        7
+      ]
+    },
+    {
+      "identifier": "eclstest",
+      "type": "web",
+      "maxAgeSeconds": null,
+      "cookieRefresh": false,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        10
+      ]
+    },
+    {
+      "identifier": "bids_map_v2",
+      "type": "web",
+      "maxAgeSeconds": null,
+      "cookieRefresh": false,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2
+      ]
+    },
+    {
+      "identifier": "mnet_session_depth",
+      "type": "cookie",
+      "maxAgeSeconds": 0,
+      "cookieRefresh": false,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2,
+        7
+      ]
+    },
+    {
+      "identifier": "crtkn",
+      "type": "web",
+      "maxAgeSeconds": null,
+      "cookieRefresh": false,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        4
+      ]
+    },
+    {
+      "identifier": "covkn",
+      "type": "web",
+      "maxAgeSeconds": null,
+      "cookieRefresh": false,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        4
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "domain": "contextual*.media.net",
+      "use": "Ad Server, Retargeting and conversion tracking"
+    },
+    {
+      "domain": "www.mnetads.net",
+      "use": "Ad Server and Tracking"
+    },
+    {
+      "domain": "*.keywordblocks.com",
+      "use": "Ad Server and Tracking"
+    },
+    {
+      "domain": "s.mnet-ad.net",
+      "use": "Ad blocking detection"
+    },
+    {
+      "domain": "promos.media.net",
+      "use": "Ad Server and Tracking"
+    },
+    {
+      "domain": "res.media.net",
+      "use": "Static Content, CSS, Javascript"
+    },
+    {
+      "domain": "lg*.media.net",
+      "use": "CDN Vendor Tracking"
+    },
+    {
+      "domain": "cvision.media.net",
+      "use": "Static Content"
+    },
+    {
+      "domain": "navvy.media.net",
+      "use": "CDN Vendor Tracking"
+    },
+    {
+      "domain": "www.mnetads.com",
+      "use": "Ad Server and Tracking"
+    },
+    {
+      "domain": "clk*.media.net",
+      "use": "Ad Server and Tracking"
+    },
+    {
+      "domain": "simg.media.net",
+      "use": "Photographs / Image Vendor"
+    },
+    {
+      "domain": "abd.media.net",
+      "use": "Ad Server and Tracking"
+    },
+    {
+      "domain": "*fapi.media.net",
+      "use": "Ad Server and Tracking"
+    },
+    {
+      "domain": "oba.media.net",
+      "use": "Network Advertising Initiative (NAI) interest-based advertising opt-out Verification"
+    },
+    {
+      "domain": "recommends.media.net",
+      "use": "Ad Server and Tracking"
+    },
+    {
+      "domain": "hbx.media.net",
+      "use": "Ad Server and Tracking"
+    },
+    {
+      "domain": "hb-pb.media.net",
+      "use": "Ad Server and Tracking"
+    },
+    {
+      "domain": "xch.media.net",
+      "use": "Ad Server and Tracking"
+    },
+    {
+      "domain": "hblg.media.net",
+      "use": "Ad Server and Tracking"
+    },
+    {
+      "domain": "c21lg-d.media.net",
+      "use": "Ad Server and Tracking"
+    },
+    {
+      "domain": "prebid.media.net",
+      "use": "Ad Server and Tracking"
+    },
+    {
+      "domain": "prebid-s2s.media.net",
+      "use": "Ad Server and Tracking"
+    },
+    {
+      "domain": "pb-logs.media.net",
+      "use": "Ad Server and Tracking"
+    },
+    {
+      "domain": "hbxlp.media.net",
+      "use": "Ad Server and Tracking"
+    },
+    {
+      "domain": "mnadshield-a.akamaihd.net",
+      "use": "Ad Server and Tracking"
+    }
+  ],
+  "sdks": []
+}

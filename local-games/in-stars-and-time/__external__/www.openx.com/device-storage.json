@@ -1,0 +1,38 @@
+{
+  "disclosures": [
+    {
+      "identifier": "i",
+      "type": "cookie",
+      "maxAgeSeconds": 31536000,
+      "cookieRefresh": true,
+      "domain": "*.openx.net",
+      "purposes": [1,2,3,4,7,10,11]
+    },
+    {
+      "identifier": "pd",
+      "type": "cookie",
+      "maxAgeSeconds": 1296000,
+      "domain": "*.openx.net",
+      "cookieRefresh": true,
+      "purposes": [],
+      "description": "This cookie stores information about which other third parties the user cookie ('i' cookie) has been synced with, in order to reduce the amount of cookie matching done on the consumer's device"
+    },
+    {
+      "identifier": "OX_dnt",
+      "type": "cookie",
+      "maxAgeSeconds": 157680000,
+      "cookieRefresh": false,
+      "domain": "*.openx.net",
+      "purposes": [],
+      "description": "Opt-out of processing and data sharing for purposes of targeted and cross-context behavioral advertising.",
+      "optOut": true
+    }
+  ],
+  "domains": [
+    {
+      "domain": "*.openx.net",
+      "use": "Ad serving and cookie syncing with partners."
+    }
+  ],
+  "sdks": []
+}

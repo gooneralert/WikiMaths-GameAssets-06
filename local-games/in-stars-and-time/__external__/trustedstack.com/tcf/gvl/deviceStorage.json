@@ -1,0 +1,92 @@
+{
+  "disclosures": [
+    {
+      "identifier": "visitor-id",
+      "type": "cookie",
+      "maxAgeSeconds": 31536000,
+      "cookieRefresh": false,
+      "domains": [
+        "*.trustedstack.com"
+      ],
+      "purposes": [
+        1,
+        4
+      ]
+    },
+    {
+      "identifier": "ts_optout",
+      "type": "cookie",
+      "maxAgeSeconds": 63120000,
+      "cookieRefresh": false,
+      "domains": [
+        "*.trustedstack.com"
+      ],
+      "purposes": [
+        1,
+        2
+      ]
+    },
+    {
+      "identifier": "data-*",
+      "type": "cookie",
+      "maxAgeSeconds": 31536000,
+      "cookieRefresh": false,
+      "domains": [
+        "*.trustedstack.com"
+      ],
+      "purposes": [
+        1,
+        4
+      ]
+    },
+    {
+      "identifier": "usp_status",
+      "type": "cookie",
+      "maxAgeSeconds": 15984000,
+      "cookieRefresh": false,
+      "domains": [
+        "*"
+      ],
+      "purposes": [
+        1,
+        2,
+        7
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "domain": "lg1.hb.trustedstack.com",
+      "use": "Logging"
+    },
+    {
+      "domain": "qsearch-a.akamaihd.net",
+      "use": "Logging"
+    },
+    {
+      "domain": "s.tpcserve.com",
+      "use": "Fraud detection"
+    },
+    {
+      "domain": "pixel.adsafeprotected.com",
+      "use": "Fraud detection"
+    },
+    {
+      "domain": "hb.trustedstack.com",
+      "use": "Cookie Sync"
+    },
+    {
+      "domain": "vplayer.trustedstack.com",
+      "use": "Video Ad Serving"
+    },
+    {
+      "domain": "prebid.trustedstack.com",
+      "use": "Ad Serving"
+    },
+    {
+      "domain": "warp.trustedstack.com",
+      "use": "Ad Serving"
+    }
+  ],
+  "sdks": []
+}

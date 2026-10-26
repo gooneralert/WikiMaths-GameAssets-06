@@ -1,0 +1,166 @@
+{
+  "slug": "grand-theft-auto-vice-city",
+  "title": "Grand Theft Auto: Vice City",
+  "type": "HTML",
+  "developer": "Rockstar Games",
+  "description": "Experience the genre-defining classic, updated for a new generation with across-the-board enhancements including brilliant new lighting and environmental upgrades, with high-resolution textures, increased draw distance, Grand Theft Auto V-style controls and targeting, and much more. Welcome to the 1980s. From the decade of big hair and pastel suits comes the story of one man's rise to the top of the criminal pile. Grand Theft Auto returns with Tommy Vercetti's tale of betrayal and revenge in a neon-soaked tropical town full of excess and brimming with possibilities. Developed by Rockstar Games, adapted by Grove Street Games.",
+  "tags": [
+    "Action",
+    "Adventure",
+    "Open World",
+    "3D",
+    "3D Platformer"
+  ],
+  "controls": [],
+  "gamepadControls": [],
+  "controllerSupport": false,
+  "sourceId": "0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3",
+  "sourceVersion": "1",
+  "sourceUrl": "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/index.html",
+  "baseUrl": "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/",
+  "entry": "/index.html",
+  "entryUrl": "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/index.html",
+  "status": "done",
+  "sizeBytes": 152282379,
+  "assetCount": 54,
+  "known404": [
+    "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/index.data",
+    "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/.data",
+    "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/.br",
+    "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/index.wasm",
+    "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/.wasm",
+    "https://playobsidian.com/home/caiiiycuk/vc/vc-sky/index.data",
+    "https://playobsidian.com/vc-assets/local/fonts/sansation.ttf",
+    "https://playobsidian.com/vc-assets/local/gamecontrollerdb.txt",
+    "https://playobsidian.com/vc-assets/local/models/generic/player.bmp",
+    "https://playobsidian.com/vc-assets/local/mp3/mp3report.txt",
+    "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/index.data",
+    "https://playobsidian.com/vc-assets/local/readme.txt",
+    "https://playobsidian.com/vc-assets/local/skins/texture_guide.jpg",
+    "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/datafile_/home/caiiiycuk/vc/vc-sky/index.data",
+    "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/index.wasm",
+    "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/.mp3",
+    "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/.ogg",
+    "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/.wav",
+    "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/asm_consts/.mp3",
+    "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/asm_consts/.wav"
+  ],
+  "failed": [
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/index.data",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/index.data",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/.data",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/.data",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/.br",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/.br",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/index.wasm",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/index.wasm",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/.wasm",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/.wasm",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/home/caiiiycuk/vc/vc-sky/index.data",
+      "error": "HTTP 404 for https://playobsidian.com/home/caiiiycuk/vc/vc-sky/index.data",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/vc-assets/local/fonts/sansation.ttf",
+      "error": "HTTP 404 for https://playobsidian.com/vc-assets/local/fonts/sansation.ttf",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/vc-assets/local/gamecontrollerdb.txt",
+      "error": "HTTP 404 for https://playobsidian.com/vc-assets/local/gamecontrollerdb.txt",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/vc-assets/local/models/generic/player.bmp",
+      "error": "HTTP 404 for https://playobsidian.com/vc-assets/local/models/generic/player.bmp",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/vc-assets/local/mp3/mp3report.txt",
+      "error": "HTTP 404 for https://playobsidian.com/vc-assets/local/mp3/mp3report.txt",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/index.data",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/index.data",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/vc-assets/local/readme.txt",
+      "error": "HTTP 404 for https://playobsidian.com/vc-assets/local/readme.txt",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/vc-assets/local/skins/texture_guide.jpg",
+      "error": "HTTP 404 for https://playobsidian.com/vc-assets/local/skins/texture_guide.jpg",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/datafile_/home/caiiiycuk/vc/vc-sky/index.data",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/datafile_/home/caiiiycuk/vc/vc-sky/index.data",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/index.wasm",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/index.wasm",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/.mp3",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/.mp3",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/.ogg",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/.ogg",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/.wav",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/asm_consts/.mp3",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/asm_consts/.mp3",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/asm_consts/.wav",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/0eb9ae41-8ccd-4eea-b7b6-0e47e791a0e3/1/modules/asm_consts/.wav",
+      "status": 404
+    }
+  ],
+  "mirroredAt": "2026-10-26T11:20:23.466Z",
+  "verifiedAt": "2026-10-26T11:20:33.327Z",
+  "verification": {
+    "external": 0,
+    "local404": 0,
+    "expected404": 0,
+    "failures": 0,
+    "title": "vc-sky",
+    "crossOriginIsolated": true,
+    "sharedArrayBuffer": "function",
+    "canvas": {
+      "width": 1264,
+      "height": 625
+    },
+    "nonBlack": 0
+  }
+}

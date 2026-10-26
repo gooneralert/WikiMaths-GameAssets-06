@@ -1,1 +1,15 @@
-{}
+{
+  "local-games/grand-theft-auto-vice-city/vcbr/vc-sky-en-v6.data": {
+    "size": 135355111,
+    "parts": [
+      {
+        "path": "local-games/grand-theft-auto-vice-city/vcbr/vc-sky-en-v6.data.part001",
+        "size": 90000000
+      },
+      {
+        "path": "local-games/grand-theft-auto-vice-city/vcbr/vc-sky-en-v6.data.part002",
+        "size": 45355111
+      }
+    ]
+  }
+}

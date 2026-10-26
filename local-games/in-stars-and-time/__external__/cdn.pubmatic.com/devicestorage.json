@@ -1,0 +1,607 @@
+{
+    "disclosures": [
+        {
+            "identifier": "KADUSERCOOKIE",
+            "type": "cookie",
+            "maxAgeSeconds": 31536000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "KRTBCOOKIE_[DSPID]",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "R_[DSPID]",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "PUBRETARGET",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "PugT",
+            "type": "cookie",
+            "maxAgeSeconds": 2592000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "KCCH",
+            "type": "cookie",
+            "maxAgeSeconds": 86400,
+            "cookieRefresh": true,
+            "domain": "*.ads.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "SyncRTB2",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "SyncRTB3",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "DPSync2",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "DPSync3",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "KTPCACOOKIE",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "FPtrust",
+            "type": "cookie",
+            "maxAgeSeconds": 0,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "DPPIX_ON",
+            "type": "cookie",
+            "maxAgeSeconds": 20,
+            "cookieRefresh": true,
+            "domain": "*.ads.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "SYNCUPPIX_ON",
+            "type": "cookie",
+            "maxAgeSeconds": 20,
+            "cookieRefresh": true,
+            "domain": "*.ads.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "PMFREQ_ON",
+            "type": "cookie",
+            "maxAgeSeconds": 86400,
+            "cookieRefresh": true,
+            "domain": "*.ads.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "USCC",
+            "type": "cookie",
+            "maxAgeSeconds": 86400,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "camfreq_<RANDOM_NUM>",
+            "type": "cookie",
+            "maxAgeSeconds": 2400,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "pubfreq_<SITEID>_<ADID>_<RANDOM_NUM>",
+            "type": "cookie",
+            "maxAgeSeconds": 2400,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "COKENBLD",
+            "type": "cookie",
+            "maxAgeSeconds": 86400,
+            "cookieRefresh": true,
+            "domain": "*.ads.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "PUBUIDSYNCUPFQ",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.ads.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "DPFQ",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.ads.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "pi",
+            "type": "cookie",
+            "maxAgeSeconds": 86400,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "repi",
+            "type": "cookie",
+            "maxAgeSeconds": 2,
+            "cookieRefresh": true,
+            "domain": "*.ads.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "ipc",
+            "type": "cookie",
+            "maxAgeSeconds": 3,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "SPugT",
+            "type": "cookie",
+            "maxAgeSeconds": 2592000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "optout",
+            "type": "cookie",
+            "maxAgeSeconds": 34560000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [],
+            "optOut": true
+        },
+        {
+            "identifier": "PUBMDCID",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "pubtime_<SITEID>",
+            "type": "cookie",
+            "maxAgeSeconds": 2592000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "pp",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "_curtime",
+            "type": "cookie",
+            "maxAgeSeconds": 4200,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "PMDTSHR",
+            "type": "cookie",
+            "maxAgeSeconds": 86400,
+            "cookieRefresh": true,
+            "domain": "*.ads.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "dV",
+            "type": "cookie",
+            "maxAgeSeconds": 180,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "TEMPHPAUSRBKCNT_<site_id>_<section_id>",
+            "type": "cookie",
+            "maxAgeSeconds": 86400,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "HPAUSRBK_<site_id>_<section_id>",
+            "type": "cookie",
+            "maxAgeSeconds": 120,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "UND",
+            "type": "cookie",
+            "maxAgeSeconds": 3600,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "SSCS",
+            "type": "cookie",
+            "maxAgeSeconds": 86400,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "chk",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "chkSecSet",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "chkChromeAb67",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "chkChromeAb67Sec",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "PM-UL-Sync",
+            "type": "cookie",
+            "maxAgeSeconds": 2592000,
+            "cookieRefresh": true,
+            "domain": "*.ads.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "uids",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.ow.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "aid_key",
+            "type": "app",
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "limited_tracking_ad_key",
+            "type": "app",
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "SyncRTB4",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domains": [
+                "*.pubmatic.com"
+            ],
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "DPSync4",
+            "type": "cookie",
+            "maxAgeSeconds": 7776000,
+            "cookieRefresh": true,
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "pubsyncexp",
+            "type": "cookie",
+            "maxAgeSeconds": 86400,
+            "cookieRefresh": true,
+            "domain": "*.ads.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "_swb",
+            "type": "cookie",
+            "maxAgeSeconds": 34560000,
+            "cookieRefresh": false,
+            "domain": "*.pubmatic.com",
+            "purposes": []
+        },
+        {
+            "identifier": "_twpid",
+            "type": "cookie",
+            "maxAgeSeconds": 33696000,
+            "cookieRefresh": false,
+            "domain": "*.pubmatic.com",
+            "purposes": []
+        },
+        {
+            "identifier": "_twsid",
+            "type": "cookie",
+            "maxAgeSeconds": 33696000,
+            "cookieRefresh": false,
+            "domain": "*.pubmatic.com",
+            "purposes": []
+        },
+        {
+            "identifier": "JSESSIONID",
+            "type": "cookie",
+            "maxAgeSeconds": 34560000,
+            "cookieRefresh": false,
+            "domain": "apps.pubmatic.com",
+            "purposes": []
+        },
+        {
+            "identifier": "PHPSESSID",
+            "type": "cookie",
+            "maxAgeSeconds": 0,
+            "cookieRefresh": true,
+            "domain": "pubmatic.com",
+            "purposes": []
+        },
+        {
+            "identifier": "route",
+            "type": "cookie",
+            "maxAgeSeconds": 86400,
+            "cookieRefresh": false,
+            "domain": "*.pubmatic.com",
+            "purposes": []
+        },
+        {
+            "identifier": "visitor_id<VISITOR_ID>",
+            "type": "cookie",
+            "maxAgeSeconds": 34560000,
+            "cookieRefresh": false,
+            "domain": "*.pubmatic.com",
+            "purposes": []
+        },
+        {
+            "identifier": "visitor_id<VISITOR_ID>-hash",
+            "type": "cookie",
+            "maxAgeSeconds": 34560000,
+            "cookieRefresh": false,
+            "domain": "*.pubmatic.com",
+            "purposes": []
+        },
+        {
+            "identifier": "PubMatic",
+            "type": "web",
+            "domain": "*.ads.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "PubMatic_USP",
+            "type": "web",
+            "domain": "*.ads.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "PubMatic_GPP",
+            "type": "web",
+            "domain": "*.ads.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "uinfo",
+            "type": "web",
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "_evidon_consent_ls_<ACTIVE-SETTINGS-ID",
+            "type": "web",
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        },
+        {
+            "identifier": "_evidon_visitor_ls_<ACTIVE-SETTINGS-ID>",
+            "type": "web",
+            "domain": "*.pubmatic.com",
+            "purposes": [
+                1
+            ]
+        }
+    ],
+    "domains": [
+        {
+            "domain": "*.pubmatic.com",
+            "use": ""
+        },
+        {
+            "domain": "*.ads.pubmatic.com",
+            "use": ""
+        },
+        {
+            "domain": "ow.pubmatic.com",
+            "use": ""
+        }
+    ],
+    "sdks": [
+        {
+            "name": "com.pubmatic.sdk:openwrap",
+            "use": "Accesses CMP consent data from device storage and transmits ad requests to PubMatic ad server"
+        },
+        {
+            "name": "com.pubmatic.openwrapsdk",
+            "use": "Accesses CMP consent data from device storage and transmits ad requests to PubMatic ad server"
+        }
+    ]
+}

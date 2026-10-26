@@ -1,0 +1,31 @@
+{
+  "disclosures": [
+    {
+      "identifier": "stx_user_id",
+      "type": "cookie",
+      "maxAgeSeconds": 2592000,
+      "cookieRefresh": true,
+      "domains": ["*.sharethrough.com"],
+      "purposes": [1, 2, 7]
+    }
+  ],
+  "domains": [
+    {
+      "domain": "match.sharethrough.com",
+      "use": "User matching"
+    },
+    {
+      "domain": "btlr.sharethrough.com",
+      "use": "Ad serving"
+    },
+    {
+      "domain": "native.sharethrough.com",
+      "use": "Display ad rendering"
+    },
+    {
+      "domain": "*.rendering.sharethrough.com",
+      "use": "Display ad rendering"
+    }
+  ],
+  "sdks": []
+}

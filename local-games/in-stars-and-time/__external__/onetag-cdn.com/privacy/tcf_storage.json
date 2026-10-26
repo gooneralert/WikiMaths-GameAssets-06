@@ -1,0 +1,63 @@
+{
+  "disclosures": [
+    {
+      "identifier": "OTP",
+      "type": "cookie",
+      "maxAgeSeconds": 34160000,
+      "cookieRefresh": false,
+      "domains": [
+        "*.onetag-sys.com",
+        "onetag-sys.com"
+      ],
+      "purposes": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        9,
+        10
+      ],
+      "specialPurposes": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "identifier": "opt-out",
+      "type": "cookie",
+      "maxAgeSeconds": 34160000,
+      "cookieRefresh": false,
+      "domain": "onetag-sys.com",
+      "purposes": [],
+      "description": "Opt out of any tracking",
+      "optOut": true
+    },
+    {
+      "identifier": "onetag_sid",
+      "type": "web",
+      "domain": "*",
+      "purposes": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        9,
+        10
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "domain": "onetag-sys.com",
+      "use": "Ad server"
+    },
+    {
+      "domain": "*.onetag-sys.com",
+      "use": "Ad server"
+    }
+  ],
+  "sdks":[]
+}
