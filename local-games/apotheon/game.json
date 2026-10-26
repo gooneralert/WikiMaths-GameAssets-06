@@ -1,0 +1,119 @@
+{
+  "slug": "apotheon",
+  "title": "Apotheon",
+  "type": "HTML",
+  "developer": "Alientrap",
+  "description": "The Gods of Olympus have abandoned humanity, leaving you to perish without their benevolence. Take up arms against the Gods, climb Mount Olympus, and take their divine powers for yourself to ensure mankind's survival! Apotheon is a fast and brutal 2D action game with a striking art style and heroic narrative based on Ancient Greek Mythology. Features: -Brutal and bloody bronze-aged combat! Slay your enemies with swords, spears, arrows, and other ancient weapons of war. -Explore the massive open world of Mount Olympus! Battle mythical beings and search for divine treasure across the Forests of Artemis, the Palaces of Apollo, and other sanctuaries of the Gods. -Guide the rise of Nikandreos, humanity's last hero. Interact with a colourful cast of fully voiced legendary characters throughout a rich single-player experience. -Challenge your friends to single combat! In one versus one local multiplayer, pit your skills against other would-be heroes of Greece. -Learn a little about Greek Mythology! Apotheon tries to stay true to its source material. Read an excerpt from the Iliad about Diomedes before you stick a Xiphos through his Aspis.",
+  "tags": [
+    "Action",
+    "2D Platformer",
+    "Metroidvania",
+    "Action-Adventure",
+    "Hand-Drawn",
+    "Indie"
+  ],
+  "controls": [],
+  "gamepadControls": [],
+  "controllerSupport": false,
+  "sourceId": "832d22d8-3574-457a-897d-b30d6eb83aa6",
+  "sourceVersion": "1",
+  "sourceUrl": "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/index.html",
+  "baseUrl": "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/",
+  "entry": "/index.html",
+  "entryUrl": "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/index.html",
+  "status": "done",
+  "sizeBytes": 1141392262,
+  "assetCount": 236,
+  "known404": [
+    "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/dist/bundler.cjs",
+    "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/.meta.json",
+    "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/dist/peerjs.min.js",
+    "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/dist/bundler.mjs",
+    "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/dist/serializer.msgpack.mjs",
+    "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/dist/peerjs.js",
+    "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/.wasm",
+    "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/dotnet.native.wasm",
+    "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/dotnet.native.worker.mjs",
+    "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/.wav",
+    "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/.ogg",
+    "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/.mp3"
+  ],
+  "failed": [
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/dist/bundler.cjs",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/dist/bundler.cjs",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/.meta.json",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/.meta.json",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/dist/peerjs.min.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/dist/peerjs.min.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/dist/bundler.mjs",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/dist/bundler.mjs",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/dist/serializer.msgpack.mjs",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/dist/serializer.msgpack.mjs",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/dist/peerjs.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/dist/peerjs.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/.wasm",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/.wasm",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/dotnet.native.wasm",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/dotnet.native.wasm",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/dotnet.native.worker.mjs",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/dotnet.native.worker.mjs",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/.wav",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/.ogg",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/.ogg",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/.mp3",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/832d22d8-3574-457a-897d-b30d6eb83aa6/1/_framework/.mp3",
+      "status": 404
+    }
+  ],
+  "mirroredAt": "2026-10-26T11:03:21.076Z",
+  "verifiedAt": "2026-10-26T11:03:30.719Z",
+  "verification": {
+    "external": 0,
+    "local404": 0,
+    "expected404": 0,
+    "failures": 0,
+    "title": "Apotheon - WebAssembly Port",
+    "crossOriginIsolated": true,
+    "sharedArrayBuffer": "function",
+    "canvas": {
+      "width": 1920,
+      "height": 1080
+    },
+    "nonBlack": 0
+  }
+}

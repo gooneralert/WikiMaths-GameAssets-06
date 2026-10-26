@@ -1,0 +1,146 @@
+{
+  "slug": "duck-life-4",
+  "title": "Duck Life 4",
+  "type": "Flash",
+  "developer": "Wix Games",
+  "description": "Duck Life 4 is a duck racing game set after the ban on genetically modified ducks. A year has passed since the ban on genetically modified ducks and now it's up to you to defeat the world champion. Train your duck team to compete in six new locations around the world.",
+  "tags": [
+    "Casual",
+    "Simulation",
+    "Singleplayer",
+    "Cartoon",
+    "Retro"
+  ],
+  "controls": [
+    {
+      "action": "Move Left/Move Up",
+      "keys": [
+        {
+          "key": "ArrowLeft",
+          "keyCode": 37
+        }
+      ]
+    },
+    {
+      "action": "Move Right/Move Down",
+      "keys": [
+        {
+          "key": "ArrowRight",
+          "keyCode": 39
+        }
+      ]
+    },
+    {
+      "action": "Jump",
+      "keys": [
+        {
+          "key": "ArrowUp",
+          "keyCode": 38
+        }
+      ]
+    },
+    {
+      "action": "Dive",
+      "keys": [
+        {
+          "key": "ArrowDown",
+          "keyCode": 40
+        }
+      ]
+    },
+    {
+      "action": "Start/Retry",
+      "keys": [
+        {
+          "key": "Space",
+          "keyCode": 32
+        }
+      ]
+    }
+  ],
+  "gamepadControls": [
+    {
+      "action": "Move Left/Move Up",
+      "buttons": [
+        14
+      ],
+      "axes": [
+        {
+          "index": 0,
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "action": "Move Right/Move Down",
+      "buttons": [
+        15
+      ],
+      "axes": [
+        {
+          "index": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "action": "Jump",
+      "buttons": [
+        0,
+        12
+      ],
+      "axes": [
+        {
+          "index": 1,
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "action": "Dive",
+      "buttons": [
+        13
+      ],
+      "axes": [
+        {
+          "index": 1,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "action": "Start/Retry",
+      "buttons": [
+        2,
+        9
+      ]
+    }
+  ],
+  "controllerSupport": false,
+  "sourceId": "97ce8e75-4a73-44a5-95e5-b45ed5b0fc36",
+  "sourceVersion": "1",
+  "sourceUrl": "https://playobsidian.com/cdn/assets/flash/97ce8e75-4a73-44a5-95e5-b45ed5b0fc36/1/97ce8e75-4a73-44a5-95e5-b45ed5b0fc36.swf",
+  "entry": "/index.html",
+  "entryUrl": "/index.html",
+  "status": "done",
+  "sizeBytes": 8904326,
+  "files": [
+    "game.swf",
+    "index.html"
+  ],
+  "notes": "Runs in the shared local Ruffle runtime.",
+  "mirroredAt": "2026-10-26T11:47:26.158Z",
+  "verifiedAt": "2026-10-26T11:47:36.956Z",
+  "verification": {
+    "external": 0,
+    "local404": 0,
+    "expected404": 0,
+    "failures": 0,
+    "title": "Duck Life 4",
+    "crossOriginIsolated": true,
+    "sharedArrayBuffer": "function",
+    "canvas": null,
+    "nonBlack": null
+  },
+  "assetCount": 0
+}

@@ -1,0 +1,351 @@
+{
+  "slug": "drive-mad",
+  "title": "Drive Mad",
+  "type": "HTML",
+  "developer": "WebVentures",
+  "description": "Drive Mad is a physics-based car game that tests how well you can control your car on increasingly difficult levels. From simple jumps to zero gravity and everything in between, driving steady matters more than speed.",
+  "tags": [
+    "Driving",
+    "Physics",
+    "Puzzle",
+    "2D",
+    "Arcade"
+  ],
+  "controls": [
+    {
+      "action": "Forward",
+      "keys": [
+        {
+          "key": "ArrowRight",
+          "keyCode": 39
+        },
+        {
+          "key": "ArrowUp",
+          "keyCode": 38
+        },
+        {
+          "key": "KeyD",
+          "keyCode": 68
+        },
+        {
+          "key": "KeyW",
+          "keyCode": 87
+        },
+        {
+          "key": "KeyI",
+          "keyCode": 73
+        },
+        {
+          "key": "KeyK",
+          "keyCode": 75
+        },
+        {
+          "key": "KeyX",
+          "keyCode": 88
+        },
+        {
+          "key": "Period",
+          "keyCode": 190
+        }
+      ]
+    },
+    {
+      "action": "Backward",
+      "keys": [
+        {
+          "key": "ArrowLeft",
+          "keyCode": 37
+        },
+        {
+          "key": "ArrowDown",
+          "keyCode": 40
+        },
+        {
+          "key": "KeyA",
+          "keyCode": 65
+        },
+        {
+          "key": "KeyS",
+          "keyCode": 83
+        },
+        {
+          "key": "KeyL",
+          "keyCode": 76
+        },
+        {
+          "key": "KeyJ",
+          "keyCode": 74
+        },
+        {
+          "key": "KeyZ",
+          "keyCode": 90
+        },
+        {
+          "key": "Comma",
+          "keyCode": 188
+        },
+        {
+          "key": "ShiftLeft",
+          "keyCode": 16
+        },
+        {
+          "key": "ShiftRight",
+          "keyCode": 16
+        },
+        {
+          "key": "ControlLeft",
+          "keyCode": 17
+        }
+      ]
+    },
+    {
+      "action": "Pause",
+      "keys": [
+        {
+          "key": "KeyP",
+          "keyCode": 80
+        },
+        {
+          "key": "Escape",
+          "keyCode": 27
+        }
+      ]
+    }
+  ],
+  "gamepadControls": [
+    {
+      "action": "Forward",
+      "buttons": [
+        15
+      ],
+      "axes": [
+        {
+          "index": 0,
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "action": "Backward",
+      "buttons": [
+        14
+      ],
+      "axes": [
+        {
+          "index": 0,
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "action": "Pause",
+      "buttons": [
+        9
+      ]
+    }
+  ],
+  "controllerSupport": false,
+  "sourceId": "ce462a76-144b-4555-90a2-f870520f150e",
+  "sourceVersion": "1",
+  "sourceUrl": "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/index.html",
+  "baseUrl": "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/",
+  "entry": "/index.html",
+  "entryUrl": "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/index.html",
+  "status": "done",
+  "sizeBytes": 2901578,
+  "assetCount": 18,
+  "known404": [
+    "https://playobsidian.com/js/main.js",
+    "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/webapp/view_common.js",
+    "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/common.css",
+    "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/common.js",
+    "https://playobsidian.com/assets/views/common.css",
+    "https://playobsidian.com/assets/views/common.js",
+    "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/webapp/view_common.css",
+    "https://playobsidian.com/assets/views/baloo2.woff",
+    "https://playobsidian.com/assets/sounds/36837_engine_no_click.wav",
+    "https://playobsidian.com/assets/atlas.png",
+    "https://playobsidian.com/assets/sounds/188204_scrape.wav",
+    "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/datafile_index.data",
+    "https://playobsidian.com/assets/sounds/78937_squeek.wav",
+    "https://playobsidian.com/assets/sounds/floor6.wav",
+    "https://playobsidian.com/assets/sounds/315935_bang.wav",
+    "https://playobsidian.com/assets/sounds/257357_button.wav",
+    "https://playobsidian.com/assets/sounds/249929_splash1.wav",
+    "https://playobsidian.com/assets/sounds/399095_jump.wav",
+    "https://playobsidian.com/assets/sounds/146721_ui_beep.wav",
+    "https://playobsidian.com/assets/sounds/194795_ui_button.wav",
+    "https://playobsidian.com/assets/sounds/521481_camera.wav",
+    "https://playobsidian.com/bundle_games.txt",
+    "https://playobsidian.com/assets/sounds/chaching.wav",
+    "https://playobsidian.com/assets/sounds/error1.wav",
+    "https://playobsidian.com/assets/sounds/coin02_band.wav",
+    "https://playobsidian.com/assets/sounds/363090_coin.wav",
+    "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/.mp3",
+    "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/.ogg",
+    "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/.wav"
+  ],
+  "failed": [
+    {
+      "url": "https://playobsidian.com/js/main.js",
+      "error": "HTTP 404 for https://playobsidian.com/js/main.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/webapp/view_common.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/webapp/view_common.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/common.css",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/common.css",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/common.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/common.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/views/common.css",
+      "error": "HTTP 404 for https://playobsidian.com/assets/views/common.css",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/views/common.js",
+      "error": "HTTP 404 for https://playobsidian.com/assets/views/common.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/webapp/view_common.css",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/webapp/view_common.css",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/views/baloo2.woff",
+      "error": "HTTP 404 for https://playobsidian.com/assets/views/baloo2.woff",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/sounds/36837_engine_no_click.wav",
+      "error": "HTTP 404 for https://playobsidian.com/assets/sounds/36837_engine_no_click.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/atlas.png",
+      "error": "HTTP 404 for https://playobsidian.com/assets/atlas.png",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/sounds/188204_scrape.wav",
+      "error": "HTTP 404 for https://playobsidian.com/assets/sounds/188204_scrape.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/datafile_index.data",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/datafile_index.data",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/sounds/78937_squeek.wav",
+      "error": "HTTP 404 for https://playobsidian.com/assets/sounds/78937_squeek.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/sounds/floor6.wav",
+      "error": "HTTP 404 for https://playobsidian.com/assets/sounds/floor6.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/sounds/315935_bang.wav",
+      "error": "HTTP 404 for https://playobsidian.com/assets/sounds/315935_bang.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/sounds/257357_button.wav",
+      "error": "HTTP 404 for https://playobsidian.com/assets/sounds/257357_button.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/sounds/249929_splash1.wav",
+      "error": "HTTP 404 for https://playobsidian.com/assets/sounds/249929_splash1.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/sounds/399095_jump.wav",
+      "error": "HTTP 404 for https://playobsidian.com/assets/sounds/399095_jump.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/sounds/146721_ui_beep.wav",
+      "error": "HTTP 404 for https://playobsidian.com/assets/sounds/146721_ui_beep.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/sounds/194795_ui_button.wav",
+      "error": "HTTP 404 for https://playobsidian.com/assets/sounds/194795_ui_button.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/sounds/521481_camera.wav",
+      "error": "HTTP 404 for https://playobsidian.com/assets/sounds/521481_camera.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/bundle_games.txt",
+      "error": "HTTP 404 for https://playobsidian.com/bundle_games.txt",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/sounds/chaching.wav",
+      "error": "HTTP 404 for https://playobsidian.com/assets/sounds/chaching.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/sounds/error1.wav",
+      "error": "HTTP 404 for https://playobsidian.com/assets/sounds/error1.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/sounds/coin02_band.wav",
+      "error": "HTTP 404 for https://playobsidian.com/assets/sounds/coin02_band.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/assets/sounds/363090_coin.wav",
+      "error": "HTTP 404 for https://playobsidian.com/assets/sounds/363090_coin.wav",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/.mp3",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/.mp3",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/.ogg",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/.ogg",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/.wav",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/ce462a76-144b-4555-90a2-f870520f150e/1/webapp/.wav",
+      "status": 404
+    }
+  ],
+  "mirroredAt": "2026-10-26T10:16:45.410Z",
+  "verifiedAt": "2026-10-26T10:16:55.990Z",
+  "verification": {
+    "external": 0,
+    "local404": 0,
+    "expected404": 0,
+    "failures": 0,
+    "title": "Drive Mad",
+    "crossOriginIsolated": true,
+    "sharedArrayBuffer": "function",
+    "canvas": {
+      "width": 1264,
+      "height": 625
+    },
+    "nonBlack": 0
+  }
+}

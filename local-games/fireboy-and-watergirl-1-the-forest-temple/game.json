@@ -1,0 +1,44 @@
+{
+  "slug": "fireboy-and-watergirl-1-the-forest-temple",
+  "title": "Fireboy & Watergirl 1: The Forest Temple",
+  "type": "Flash",
+  "developer": "Oslo Albet",
+  "description": "Fireboy & Watergirl 1: The Forest Temple is the iconic first chapter of the classic puzzle-platformer series. Solve the puzzles, beat the clock and collect all the diamonds! Play solo or with a friend to join Fireboy and Watergirl in their first adventure!",
+  "tags": [
+    "2D Platformer",
+    "Casual",
+    "Co-Op",
+    "Family Friendly",
+    "Physics",
+    "Puzzle"
+  ],
+  "controls": [],
+  "gamepadControls": [],
+  "controllerSupport": false,
+  "sourceId": "4fffa921-7ef4-4893-b2a3-fe9794f88dfb",
+  "sourceVersion": "1",
+  "sourceUrl": "https://playobsidian.com/cdn/assets/flash/4fffa921-7ef4-4893-b2a3-fe9794f88dfb/1/4fffa921-7ef4-4893-b2a3-fe9794f88dfb.swf",
+  "entry": "/index.html",
+  "entryUrl": "/index.html",
+  "status": "done",
+  "sizeBytes": 1855972,
+  "files": [
+    "game.swf",
+    "index.html"
+  ],
+  "notes": "Runs in the shared local Ruffle runtime.",
+  "mirroredAt": "2026-10-26T11:53:06.959Z",
+  "verifiedAt": "2026-10-26T11:53:17.693Z",
+  "verification": {
+    "external": 0,
+    "local404": 0,
+    "expected404": 0,
+    "failures": 0,
+    "title": "Fireboy & Watergirl 1: The Forest Temple",
+    "crossOriginIsolated": true,
+    "sharedArrayBuffer": "function",
+    "canvas": null,
+    "nonBlack": null
+  },
+  "assetCount": 0
+}

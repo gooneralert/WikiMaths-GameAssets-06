@@ -1,0 +1,65 @@
+{
+  "slug": "baldis-basics-classic-remastered",
+  "title": "Baldi's Basics Classic Remastered",
+  "type": "HTML",
+  "developer": "Basically Games",
+  "description": "Welcome to Baldi's Basics in Education and Learning! Baldi's Basics Classic Remastered is a survival horror stealth game that parodies cheap 90's edutainment and never takes itself too seriously. Explore Baldi's schoolhouse and try to find all 7 notebooks, but don't get caught by Baldi! He wants to play hide-and-seek, but something... Isn't right. Luckily you have a slew of items you can find and use to your advantage, but Baldi also has friends who can cause problems for you if you're not careful. And remember, Baldi hears every noise you make, so do what you can to stay quiet!",
+  "tags": [
+    "Horror",
+    "First-Person",
+    "Comedy",
+    "Puzzle",
+    "Indie",
+    "Singleplayer"
+  ],
+  "controls": [],
+  "gamepadControls": [],
+  "controllerSupport": false,
+  "sourceId": "b07b050d-bf0b-4d75-9406-86ad46ccdb92",
+  "sourceVersion": "1",
+  "sourceUrl": "https://playobsidian.com/cdn/assets/html/b07b050d-bf0b-4d75-9406-86ad46ccdb92/1/index.html",
+  "baseUrl": "https://playobsidian.com/cdn/assets/html/b07b050d-bf0b-4d75-9406-86ad46ccdb92/1/",
+  "entry": "/index.html",
+  "entryUrl": "https://playobsidian.com/cdn/assets/html/b07b050d-bf0b-4d75-9406-86ad46ccdb92/1/index.html",
+  "status": "done",
+  "sizeBytes": 111981831,
+  "assetCount": 22,
+  "known404": [
+    "https://playobsidian.com/cdn/assets/html/b07b050d-bf0b-4d75-9406-86ad46ccdb92/1/Build/WebGL.data",
+    "https://playobsidian.com/cdn/assets/html/b07b050d-bf0b-4d75-9406-86ad46ccdb92/1/Build/WebGL.wasm",
+    "https://playobsidian.com/cdn/assets/html/b07b050d-bf0b-4d75-9406-86ad46ccdb92/1/Build/build.wasm"
+  ],
+  "failed": [
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/b07b050d-bf0b-4d75-9406-86ad46ccdb92/1/Build/WebGL.data",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/b07b050d-bf0b-4d75-9406-86ad46ccdb92/1/Build/WebGL.data",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/b07b050d-bf0b-4d75-9406-86ad46ccdb92/1/Build/WebGL.wasm",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/b07b050d-bf0b-4d75-9406-86ad46ccdb92/1/Build/WebGL.wasm",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/b07b050d-bf0b-4d75-9406-86ad46ccdb92/1/Build/build.wasm",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/b07b050d-bf0b-4d75-9406-86ad46ccdb92/1/Build/build.wasm",
+      "status": 404
+    }
+  ],
+  "mirroredAt": "2026-10-26T11:06:18.429Z",
+  "verifiedAt": "2026-10-26T11:06:28.761Z",
+  "verification": {
+    "external": 0,
+    "local404": 0,
+    "expected404": 0,
+    "failures": 1,
+    "title": "Unity WebGL Player | Baldi's Basics Classic Remastered",
+    "crossOriginIsolated": true,
+    "sharedArrayBuffer": "function",
+    "canvas": {
+      "width": 800,
+      "height": 600
+    },
+    "nonBlack": 0
+  }
+}

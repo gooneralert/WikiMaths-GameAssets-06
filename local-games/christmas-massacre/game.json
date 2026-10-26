@@ -1,0 +1,161 @@
+{
+  "slug": "christmas-massacre",
+  "title": "Christmas Massacre",
+  "type": "HTML",
+  "developer": "Puppet Combo",
+  "description": "Larry's Christmas tree has been telling him to kill. But whose side is the tree really on? And can he trust what he's hearing? CHRISTMAS MASSACRE is an 80's inspired stealth slasher game with low-poly, PS1-style graphics. Sneak, stalk and murder your prey without being caught. You must kill without being seen to complete each level.",
+  "tags": [
+    "Horror",
+    "First-Person",
+    "Violent",
+    "Comedy",
+    "Retro",
+    "Singleplayer"
+  ],
+  "controls": [],
+  "gamepadControls": [],
+  "controllerSupport": false,
+  "sourceId": "be17fb6b-169a-4d4a-9933-688c8c3f4a9e",
+  "sourceVersion": "1",
+  "sourceUrl": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/index.html",
+  "baseUrl": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/",
+  "entry": "/index.html",
+  "entryUrl": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/index.html",
+  "status": "done",
+  "sizeBytes": 372874910,
+  "assetCount": 50,
+  "known404": [
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/testbuild.data.unityweb",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/testbuild.asm.code.unityweb",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/testbuild.asm.code.unityweb",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/testbuild.data.unityweb",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/zlib/constants.js",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/zlib/messages.js",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/utils/strings.js",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/zlib/inftrees.js",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/zlib/zstream.js",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/zlib/inflate.js",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/dictionary.bin.js",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/decode.js",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dictionary.bin.js",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/dictionary.js",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/dictionary-browser.js",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/huffman.js",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/streams.js",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/prefix.js",
+    "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/transform.js"
+  ],
+  "failed": [
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/testbuild.data.unityweb",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/testbuild.data.unityweb",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/testbuild.asm.code.unityweb",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/testbuild.asm.code.unityweb",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/testbuild.asm.code.unityweb",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/testbuild.asm.code.unityweb",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/testbuild.data.unityweb",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/testbuild.data.unityweb",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/zlib/constants.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/zlib/constants.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/zlib/messages.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/zlib/messages.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/utils/strings.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/utils/strings.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/zlib/inftrees.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/zlib/inftrees.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/zlib/zstream.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/zlib/zstream.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/zlib/inflate.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/zlib/inflate.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/dictionary.bin.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/dictionary.bin.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/decode.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/decode.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dictionary.bin.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dictionary.bin.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/dictionary.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/dictionary.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/dictionary-browser.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/dictionary-browser.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/huffman.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/huffman.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/streams.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/streams.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/prefix.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/prefix.js",
+      "status": 404
+    },
+    {
+      "url": "https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/transform.js",
+      "error": "HTTP 404 for https://playobsidian.com/cdn/assets/html/be17fb6b-169a-4d4a-9933-688c8c3f4a9e/1/Build/dec/transform.js",
+      "status": 404
+    }
+  ],
+  "mirroredAt": "2026-10-26T11:10:38.751Z",
+  "verifiedAt": "2026-10-26T11:11:40.183Z",
+  "verification": {
+    "external": 0,
+    "local404": 0,
+    "expected404": 0,
+    "failures": 0,
+    "title": "Christmas Massacre",
+    "crossOriginIsolated": true,
+    "sharedArrayBuffer": "function",
+    "canvas": {
+      "width": 1264,
+      "height": 625
+    },
+    "nonBlack": 0
+  }
+}
